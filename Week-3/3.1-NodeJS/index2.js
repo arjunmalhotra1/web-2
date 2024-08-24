@@ -11,3 +11,5 @@ node index2.js
 /Users/arjunmalhotra/Documents/repos/self-learning/web-2-kirat/Week-3/3.1-NodeJS../../../index2.js
 /Users/arjunmalhotra/Documents/repos/self-learning/index2.js
  */
+
+// We don't commit node_modules
