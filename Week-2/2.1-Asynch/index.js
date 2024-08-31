@@ -51,13 +51,13 @@
 // const contentsb = fs.readFileSync("b.txt", "utf-8")
 // console.log(contentsb)
 
-// const fs = require("fs");
+const fs = require("fs");
 
 // const contents = fs.readFile("a.txt","utf-8");
 // console.log(contents)
 
-// const contentsb = fs.readFileSync("b.txt","utf-8");
-// console.log(contentsb)
+const contentsb = fs.readFileSync("b.txt","utf-8");
+console.log(contentsb)
 
 
 // function sum(a, b) {
@@ -72,12 +72,13 @@
 // console.log(doOperation(1,2,sum))
 
 
-const fs = require("fs");
+// const { time } = require("console");
+// const fs = require("fs");
 
-// afterFileRead is the callback function.
-function afterFileRead(err, data) {
-    console.log(data)
-}
+// // afterFileRead is the callback function.
+// function afterFileRead(err, data) {
+//     console.log(data)
+// }
 
 /*
 better way to write the afterFileRead function.
@@ -90,9 +91,9 @@ function afterFileRead(err, data) {
 }
 */
 
-fs.readFile("a.txt","utf-8",afterFileRead);
-fs.readFile("b.txt","utf-8",afterFileRead);
-console.log("Done");
+// fs.readFile("a.txt","utf-8",afterFileRead);
+// fs.readFile("b.txt","utf-8",afterFileRead);
+// console.log("Done");
 
 
 /* 
@@ -103,4 +104,26 @@ function readFile(filePath, encoding, op) {
 
     op("Error","hi there")
 }
+*/
+
+// this is from the - http://latentflip.com/loupe/
+function timeout() {
+    console.log("click the button!")
+}
+console.log("Hi!")
+setTimeout(timeout, 1)
+console.log("Welcome to loupe.")
+let c = 0;
+for (let i=0;i<10000000000;i++){
+    c = c+1;
+}
+
+console.log("Expensive operation done");
+
+/*
+Note: "click the button!" prints after "Expensive operation done".
+Hi!
+Welcome to loupe.
+Expensive operation done
+click the button!
 */
