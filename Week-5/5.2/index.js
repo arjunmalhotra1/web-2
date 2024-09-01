@@ -6,14 +6,10 @@ let requestCount = 0
 // This is not a middleware but close to middleware.
 function requestIncreaser(req,res, next) {
     requestCount = requestCount + 1
-    if (req.body.cookie === "google") {
-        next
-    } else {
-        res.json( {
-            message: "You are not allowed"
-        })
-    }
     console.log("Total number of requests = "+requestCount)
+    res.json({
+        message:"Request ended early"
+    })
 
     // The next function will be called. If no next() then the next function will not be called.
     next();
@@ -24,7 +20,6 @@ function requestIncreaser(req,res, next) {
 function realSumHandler(req, res) {
     const a = parseInt(req.query.a)
     const b  = parseInt(req.query.b)
-    console.log(req.name)
     res.json({
         ans: a+b
     })
