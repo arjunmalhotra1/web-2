@@ -10,8 +10,10 @@ function requestIncreaser(req,res) {
     req.requestCount = requestCount
 }
 
-app.get('/sum', function (req, res) {
-    requestIncreaser(req,res)
+
+
+// The express framework is nothing but a chain of middlewares.
+app.get('/sum',requestIncreaser, function (req, res) {
     const a = parseInt(req.query.a)
     const b  = parseInt(req.query.b)
 
