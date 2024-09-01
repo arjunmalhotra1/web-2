@@ -8,12 +8,19 @@
             const response = await axios.get("https://google.com");
             console.log("response: ",response);
         }
+      function sendRequest2() {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", "https://google.com", false ); 
+        xmlHttp.send( null );
+        console.log("response: ", xmlHttp.responseText);
+    }
   </script>
   
 </head>
 
 <body>
 <button onclick="sendRequest()">CORS request</button>
+<button onclick="sendRequest2()">CORS request</button>
 <a href="https://www.google.com">
 <button>
     Not a CORS request
