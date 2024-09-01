@@ -11,16 +11,18 @@ function requestIncreaser(req,res) {
 }
 
 
-
-// The express framework is nothing but a chain of middlewares.
-app.get('/sum',requestIncreaser, function (req, res) {
+function realSumHandler(req, res) {
     const a = parseInt(req.query.a)
     const b  = parseInt(req.query.b)
 
     res.json({
         ans: a+b
     })
-})
+}
+
+
+// The express framework is nothing but a chain of middlewares.
+app.get('/sum',requestIncreaser, realSumHandler)
 
 app.get('/multiply', function (req, res) {
     const a = parseInt(req.query.a)
