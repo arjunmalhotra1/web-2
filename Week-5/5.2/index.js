@@ -1,11 +1,14 @@
 const express = require("express");
+const bodyparser = require("body-parser")
 
 const app = express();
 
 // app.use(express.json());
 
-let middleware = express.json()
-app.use(middleware)
+// let middleware = express.json()
+// app.use(middleware)
+
+app.use(bodyparser.json())
 
 
 // In express if you want to send json data we need to first parse the json data.
