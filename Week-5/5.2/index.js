@@ -12,7 +12,7 @@ function loggerMiddleware(req,res, next) {
     next();
 }
 
-app.use(loggerMiddleware)
+
 
 app.get("/sum", function(req, res) {
     const a = req.query.a;
@@ -22,6 +22,9 @@ app.get("/sum", function(req, res) {
         ans: a + b
     })
 });
+
+// All the route handlers after the app.use get the middleware.
+app.use(loggerMiddleware)
 
 app.get("/multiply", function(req, res) {
     const a = req.query.a;
