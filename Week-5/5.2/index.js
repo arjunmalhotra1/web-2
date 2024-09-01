@@ -1,62 +1,51 @@
-const express = require('express')
-const app = express()
+const express = require("express");
 
-let requestCount = 0
+const app = express();
 
-// This is not a middleware but close to middleware.
-function requestIncreaser(req,res, next) {
-    requestCount = requestCount + 1
-    console.log("Total number of requests = "+requestCount)
-    res.json({
-        message:"Request ended early"
-    })
-    // The next function will be called. If no next() then the next function will not be called.
+
+function loggerMiddleware(req,res, next) {
+    console.log("Method is: ", req.method);
+    console.log("URL is: ",req.url);
+    console.log("Hostname is: ",req.hostname);
+    console.log(new Date());
+
     next();
 }
 
-app.get("/admin",realSumHandler)
+app.use(loggerMiddleware)
 
-app.use(requestIncreaser)
+app.get("/sum", function(req, res) {
+    const a = req.query.a;
+    const b = req.query.b;
 
-
-function realSumHandler(req, res) {
-    const a = parseInt(req.query.a)
-    const b  = parseInt(req.query.b)
     res.json({
-        ans: a+b
+        ans: a + b
     })
-}
+});
 
-
-// The express framework is nothing but a chain of middlewares.
-// In the last function we handle the request or send a response.
-app.get('/sum',requestIncreaser, realSumHandler)
-
-app.get('/multiply', function (req, res) {
-    const a = parseInt(req.query.a)
-    const b  = parseInt(req.query.b)
+app.get("/multiply", function(req, res) {
+    const a = req.query.a;
+    const b = req.query.b;
     res.json({
-        ans: a*b
+        ans: a * b
     })
-    
-})
+});
 
-app.get('/subtract', function (req, res) {
-    const a = parseInt(req.query.a)
-    const b  = parseInt(req.query.b)
+app.get("/divide", function(req, res) {
+    const a = req.query.a;
+    const b = req.query.b;
     res.json({
-        ans: a-b
+        ans: a / b
     })
-})
 
-app.get('/division', function (req, res) {
-    const a = parseInt(req.query.a)
-    const b  = parseInt(req.query.b)
+});
+
+app.get("/subtract", function(req, res) {
+    const a = req.query.a;
+    const b = req.query.b;
     res.json({
-        ans: a/b
+        ans: a - b
     })
-})
+});
 
-
-
-app.listen(3009)
+app.listen(3009);
