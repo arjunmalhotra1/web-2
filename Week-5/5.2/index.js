@@ -2,7 +2,10 @@ const express = require("express");
 
 const app = express();
 
-app.use(express.json());
+// app.use(express.json());
+
+let middleware = express.json()
+app.use(middleware)
 
 
 // In express if you want to send json data we need to first parse the json data.
