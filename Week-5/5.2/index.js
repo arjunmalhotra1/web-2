@@ -1,12 +1,13 @@
 const express = require('express')
 const app = express()
 
-let request = 0
+let requestCount = 0
 
 // This is not a middleware but close to middleware.
 function requestIncreaser(req,res) {
-    request = request + 1
-    console.log("Total number of requests = "+request)
+    requestCount = requestCount + 1
+    console.log("Total number of requests = "+requestCount)
+    req.requestCount = requestCount
 }
 
 app.get('/sum', function (req, res) {
