@@ -6,6 +6,7 @@ let requestCount = 0
 // This is not a middleware but close to middleware.
 function requestIncreaser(req,res, next) {
     requestCount = requestCount + 1
+    req.name = "randomtext"
     console.log("Total number of requests = "+requestCount)
 
     // The next function will be called. If no next() then the next function will not be called.
@@ -17,7 +18,7 @@ function requestIncreaser(req,res, next) {
 function realSumHandler(req, res) {
     const a = parseInt(req.query.a)
     const b  = parseInt(req.query.b)
-
+    console.log(req.name)
     res.json({
         ans: a+b
     })
