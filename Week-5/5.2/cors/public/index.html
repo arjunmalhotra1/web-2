@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+  <script>
+     async function sendRequest() {
+            const a = document.getElementById("a").value;
+            const b = document.getElementById("b").value;
+            const response = await axios.post("http://localhost:3009/sum", {
+                a: a,
+                b: b
+            })
+            console.log("response.data: ",response.data);
+            console.log("response: ",response);
+        }
+
+    // My code which was not working - 
+    // const a = document.getElementById("a").value
+    // const b = document.getElementById("b").value
+    // async function sendRequest() {
+    //    const response = await axios.post("http://localhost:3009/sum",{
+    //         a: a,
+    //         b: b
+    //     })
+    //     console.log(response)
+    // }
+  </script>
+  
+</head>
+
+<body>
+  <!-- <div id="posts"></div>
+  <script>
+    async function sendRequest() {
+      const res = await axios.get("http://localhost:3000/sum?a=1&b=2");
+    }
+
+    sendRequest();
+  </script> -->
+<input id="a" type="text" placeholder="First value"></input>
+<input id="b" type="text" placeholder="Second value"></input>
+<button onclick="sendRequest()">Find sum </button>
+</body>
+
+</html>
