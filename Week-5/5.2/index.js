@@ -3,10 +3,14 @@ const app = express()
 
 let request = 0
 
-app.get('/sum', function (req, res) {
+// This is not a middleware but close to middleware.
+function requestIncreaser(req,res) {
     request = request + 1
     console.log("Total number of requests = "+request)
+}
 
+app.get('/sum', function (req, res) {
+    requestIncreaser(req,res)
     const a = parseInt(req.query.a)
     const b  = parseInt(req.query.b)
 
@@ -16,9 +20,6 @@ app.get('/sum', function (req, res) {
 })
 
 app.get('/multiply', function (req, res) {
-    request = request + 1
-    console.log("Total number of requests = "+request)
-
     const a = parseInt(req.query.a)
     const b  = parseInt(req.query.b)
     res.json({
@@ -28,9 +29,6 @@ app.get('/multiply', function (req, res) {
 })
 
 app.get('/subtract', function (req, res) {
-    request = request + 1
-    console.log("Total number of requests = "+request)
-
     const a = parseInt(req.query.a)
     const b  = parseInt(req.query.b)
     res.json({
@@ -39,9 +37,6 @@ app.get('/subtract', function (req, res) {
 })
 
 app.get('/division', function (req, res) {
-    request = request + 1
-    console.log("Total number of requests = "+request)
-    
     const a = parseInt(req.query.a)
     const b  = parseInt(req.query.b)
     res.json({
