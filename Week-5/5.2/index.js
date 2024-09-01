@@ -10,11 +10,13 @@ function requestIncreaser(req,res, next) {
     res.json({
         message:"Request ended early"
     })
-
     // The next function will be called. If no next() then the next function will not be called.
     next();
-
 }
+
+app.get("/admin",realSumHandler)
+
+app.use(requestIncreaser)
 
 
 function realSumHandler(req, res) {
