@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+  <script>
+     async function sendRequest() {
+            const response = await axios.get("http://localhost:3009/test");
+            console.log("response: ",response);
+        }
+  </script>
+  
+</head>
+
+<body>
+<button onclick="sendRequest()">CORS request</button>
+<a href="http://localhost:3009/test">
+<button>
+    Not a CORS request
+</button>
+</body>
+
+</html>
