@@ -80,11 +80,15 @@ app.get("/me",(req,res)=> {
 
 app.listen(3087)
 
-
-// for( leti = 0;i<users.length;i++) {
-//     if (users[i].username == username && )
+// Simple version of finding the user.
+// for(let i = 0;i<users.length;i++) {
+//     if (users[i].username == username && users[i].password == password){
+//         foundUser = user[i]
+//     }
 // }
+// if(founder) {
 
+// }
 
 // users.find(function(u){
     
