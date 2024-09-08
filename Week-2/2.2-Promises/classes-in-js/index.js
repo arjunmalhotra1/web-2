@@ -21,26 +21,32 @@
 //     }
 // }
 
-console.log("rect1.area",rect1.area())
+// console.log("rect1.area",rect1.area())
+
+
  
-class Rectangle {
+// class Rectangle {
     
-    constructor(width, height, color) {
-        this.width = width;
-        this.height = height;
-        this.color = color;
-    }
+//     constructor(width, height, color) {
+//         this.width = width;
+//         this.height = height;
+//         this.color = color;
+//     }
 
-    area() {
-        const area = this.height * this.width;
-        return area;
-    }
+//     area() {
+//         const area = this.height * this.width;
+//         return area;
+//     }
 
-    paint() {
-        console.log(`Painting the color ${this.color}`);
-    }
-}
+//     paint() {
+//         console.log(`Painting the color ${this.color}`);
+//     }
+// }
 
-const rect = new Rectangle(2, 3);
-const a = rect.area();
-console.log(a)
+// const rect = new Rectangle(2, 3);
+// const rectangleArea = rect.area();
+// console.log(rectangleArea)
+
+// He skipped the Inheritance slide. Covered in offline video.
+
+
