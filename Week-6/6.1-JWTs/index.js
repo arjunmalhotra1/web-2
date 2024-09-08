@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const app = express();
-const JWT_SECRET = "USER_APP";
+const JWT_SECRET = "randomsecretvalue";
 app.use(express.json());
 
 
@@ -33,7 +33,8 @@ app.post("/signin",(req, res)=>{
             username: user.username
         }, JWT_SECRET);
 
-        user.token = token;
+        // We don't need to store the token as well.
+        // user.token = token;
         res.send({
             token
         })
@@ -50,13 +51,17 @@ app.get("/me",(req,res)=> {
     const token = req.headers.authorization;
     //const user = users.find(user => user.token === token);
     const userDetails = jwt.verify(token, JWT_SECRET);
+    //jwt.io uses the decode. decode is different from verify
+    // jwt.decode(token)
     const username =  userDetails.username;
 
+    // We are finding the user here.
     const user = users.find(user => user.username === username);
     if (user) {
         res.send({
             username: user.username,
             message: "This is /me response",
+            password: user.password
         })
     } else {
         res.status(401).send({

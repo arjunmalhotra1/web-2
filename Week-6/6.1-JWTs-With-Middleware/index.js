@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const app = express();
-const JWT_SECRET = "USER_APP";
+const JWT_SECRET = "randomsecretvalue";
 app.use(express.json());
 
 
@@ -55,7 +55,8 @@ app.post("/signin",(req, res)=>{
             username: user.username
         }, JWT_SECRET);
 
-        user.token = token;
+        // We don't need to store the token as well.
+        // user.token = token; 
         res.send({
             token
         })
@@ -70,7 +71,6 @@ app.post("/signin",(req, res)=>{
 
 app.get("/me", auth, (req,res) => {
     const user = req.user;
-
     res.send({
         username: user.username,
         message: "response from /me"
