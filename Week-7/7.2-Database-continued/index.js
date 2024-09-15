@@ -2,6 +2,7 @@ const express = require("express");
 const { UserModel, TodoModel } = require("./db");
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt");
+const {z} = require("zod")
 
 // const JWT_SECRET = "s3cret";
 const { auth, JWT_SECRET } = require("./auth");
@@ -13,15 +14,39 @@ const app = express();
 app.use(express.json());
 
 app.post("/signup", async function(req, res) {
+
+    // Input validation with zod
+    // validation - our required body should be an oject with email as string .....
+    // req.Body {
+    //     email: string,
+    //     password: string,
+    //     name: string
+    // }
+
+    const requiredBody = z.object ({
+        email: z.string().min(3).max(100).email(),
+        name: z.string().min(3).max(100),
+        password: z.string().min(3).max(10)
+    })
+
+    // const parsedData = requiredBody.parse(req.Body) // This will throw an error and we will have to catch in try catch.
+    const parsedDataWithSuccess = requiredBody.safeParse(req.Body)
+    
+    // 1. How to show the user the exact error
+
+    if (!parsedDataWithSuccess.success) {
+        res.json({
+            message: "Incorrect format",
+            error: parsedDataWithSuccess.error
+        })
+        return
+    }
+
+
     const email = req.body.email;
     const password = req.body.password;
     const name = req.body.name;
 
-    if (typeof email !="string" || email.length < 5 || email.includes("@")) {
-        res. json (k
-        message: "Email incorrect"
-        return
-    }
 
     const hasedPassword = await bcrypt.hash(password, 10);
 
