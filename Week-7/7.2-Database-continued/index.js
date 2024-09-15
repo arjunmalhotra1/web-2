@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 // const JWT_SECRET = "s3cret";
 const { auth, JWT_SECRET } = require("./auth");
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://username:ou7O7yf06WjkKomD@some-name-mongodb.sx1v0.mongodb.net/todo-app-database-postman")
+mongoose.connect("mongodb+srv://username:ou7O7yf06WjkKomD@some-name-mongodb.sx1v0.mongodb.net/todo-app-database-postman-2")
 // mongodb+srv://username:ou7O7yf06WjkKomD@some-name-mongodb.sx1v0.mongodb.net/
 
 const app = express();
@@ -16,9 +16,13 @@ app.post("/signup", async function(req, res) {
     const email = req.body.email;
     const password = req.body.password;
     const name = req.body.name;
-    
-    let errorThrown = true;
-    try {
+
+    if (typeof email !="string" || email.length < 5 || email.includes("@")) {
+        res. json (k
+        message: "Email incorrect"
+        return
+    }
+
     const hasedPassword = await bcrypt.hash(password, 10);
 
     await UserModel.create({
@@ -26,18 +30,10 @@ app.post("/signup", async function(req, res) {
         password: hasedPassword,
         name: name
     });
-} catch(e) {
-    res.json({
-        message: "User already signed up"
-    })    
-    errorThrown = true
-}
-
-if (!errorThrown) {
+    
     res.json({
         message: "You are signed up"
     })
-}   
 });
 
 
