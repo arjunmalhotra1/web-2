@@ -1,5 +1,3 @@
-<!-- browsers understand html, css & javascript -->
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,29 +5,17 @@
 	  <meta name="viewport" content="width=device-width">
 	  <title>replit</title>
 	  <link href="style.css" rel="stylesheet" type="text/css" />
-      <style>
-        .todo{
-            background-color: red;
-        }
-      </style>
 	</head>
 	
 	<body>
 	  <h1>Todo list</h1>
-	  <h4 class="todo">1. Take class</h4>
-	  <h4 class="todo">2. Go out to eat</h4>
-      <h4 class="todo">2. Go out to eat</h4>
+	  <h4>1. Take class</h4>
+	  <h4>2. Go out to eat</h4>
 	  <div>
-	    <input type="text" placeholder="add your todo here"></input>
-	    <button id="someRandomId" onclick="addTodo()">Add Todo</button>
+	    <input type="text"></input>
+	    <button>Add Todo</button>
 	  </div>
-    <script>
-        function addTodo() {
-            const inputElement = document.querySelector("input");
-            const value = inputElement.value;
-            console.log(value); 
-        }
-    </script>
+	  <script src="script.js"></script>
 	</body>
 	
-</html>
+</html>  
