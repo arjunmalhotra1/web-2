@@ -4,9 +4,4 @@ function callback() {
     counter = counter + 1
 }
 
-callback()
-callback()
-callback()
-callback()
-callback()
-callback()
+setInterval(callback, 1000)
