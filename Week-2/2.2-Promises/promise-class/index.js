@@ -33,6 +33,7 @@
 // setTimeoutPromisified(3000).then(callback)
 
 // We need Promises because of Callbackhell. Promises are a better way. Promises fix CallbackHell.
+// CallBackHell is an offline video.
 
 // This returns a new instance/object of the promise class.
 // ms here represents milliseconds.
