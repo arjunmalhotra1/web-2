@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <div id="topDiv">
+            hi there
+        </div>
+    </body>
+    <script>
+        const divEle = document.createElement("div")
+        divEle.innerHTML = "hi there 222"
+        const parentEle = document.querySelector("body")
+        console.log(parentEle)
+        parentEle.appendChild(divEle)
+        console.log(parentEle)
+    </script>
+</html>
