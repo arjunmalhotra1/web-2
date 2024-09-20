@@ -14,12 +14,15 @@
 	  <h4>1. Take class</h4>
 	  <h4>2. Go out to eat</h4>
 	  <div>
-	    <input type="text"></input>
-	    <button>Add Todo</button>
+	    <input type="text" placeholder="add your todo here"></input>
+	    <button id="someRandomId" onclick="addTodo()">Add Todo</button>
 	  </div>
     <script>
-         const inputElement = document.querySelector("input");
-         console.log(inputElement);
+        function addTodo() {
+            const inputElement = document.querySelector("input");
+            const value = inputElement.value;
+            console.log(value); 
+        }
     </script>
 	</body>
 	
