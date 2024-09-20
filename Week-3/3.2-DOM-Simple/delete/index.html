@@ -10,7 +10,7 @@
 
 <body>
   <h1>Todo list</h1>
-  <div>
+  <div id="todo-parent">
     <div id="todo-1" style="display: flex;">
       <h4>1. Take class</h4>
       <button onclick="deleteTodo(1)">delete</button>
@@ -29,7 +29,7 @@
 <script>
   function deleteTodo(index) {
     const element = document.getElementById("todo-" + index);
-    element.parentNode.removeChild(element);
+    document.getElementById("todo-parent").removeChild(element)
   }
 </script>
 
