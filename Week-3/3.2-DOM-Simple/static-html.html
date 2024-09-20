@@ -7,12 +7,18 @@
 	  <meta name="viewport" content="width=device-width">
 	  <title>replit</title>
 	  <link href="style.css" rel="stylesheet" type="text/css" />
+      <style>
+        #todo1{
+            background-color: red;
+        }
+      </style>
 	</head>
 	
 	<body>
 	  <h1>Todo list</h1>
-	  <h4>1. Take class</h4>
-	  <h4>2. Go out to eat</h4>
+	  <h4 id="todo1">1. Take class</h4>
+	  <h4 id="todo2">2. Go out to eat</h4>
+      <h4 id="todo2">2. Go out to eat</h4>
 	  <div>
 	    <input type="text" placeholder="add your todo here"></input>
 	    <button id="someRandomId" onclick="addTodo()">Add Todo</button>
