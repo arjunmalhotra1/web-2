@@ -4,14 +4,22 @@
         <button onclick="addTodo()">Add Todo</button>
     </body>
     <script>
+        let counter = 1
         function addTodo() {
             const inputEl = document.querySelector("input")
             const value = inputEl.value
             
             const divEle = document.createElement("div")
-            divEle.innerHTML = "<div>"+value+"</div><button>delete</button>"
+            divEle.setAttribute("id",counter)
+            divEle.innerHTML = "<div>"+value+"</div><button onclick='deleteTodo("+counter+")'>delete</button>"
 
             document.querySelector("body").appendChild(divEle)
+            counter++
+        }
+
+        function deleteTodo(index) {
+            const ele = document.getElementById(index)
+            ele.parentElement.removeChild(ele)
         }
     </script>
 </html>
