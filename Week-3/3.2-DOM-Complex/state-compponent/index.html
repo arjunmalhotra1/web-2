@@ -3,6 +3,7 @@
         <input type="text"></input>
         <button onclick="addTodo()"> Add todo!</button>
         <button onclick="deleteLastTodo()"> Delete last todo!</button>
+        <button onclick="deleteFirstTodo()"> Delete first todo!</button>
         <div id="todos"></div>
     </body>
 
@@ -21,9 +22,15 @@
             // simply delete the second Todo
             // "todos.length-1" -> where we want to delete from
             // "1" -> how many elements we want to delete.
-            todos = todos.splice(todos.length-1,1) // removes the last element from arr
+            todos.splice(todos.length-1,1) // removes the last element from arr
             render()
         }
+
+        function deleteFirstTodo() {
+            todos.splice(0,1) // removes the first element from arr
+            render()
+        }
+
 
         // Create TodoComponent. // We WRITE THIS & STATE IN REACT
         function createTodoComponent(todo) {
