@@ -2,9 +2,11 @@
     <body>
         <input type="text"></input>
         <button onclick="addTodo()"> Add todo!</button>
+        <div id="todos"></div>
     </body>
 
     <script>
+        // state variable
         let todos = []
         function addTodo() {
             todos.push({
@@ -20,7 +22,9 @@
         }
 
         function render() {
-            
+            // We first clear the div and then we iterate over current state(todos) & then 
+            // populate the div
+            document.querySelector("#todos").innerHTML = ""
             for(let i= 0;i<todos.length;i++) {
                 const todo = todos[i];
                 const newToDoDivEl = document.createElement("div")
@@ -31,7 +35,7 @@
                 newToDoDivEl.appendChild(h1Element)
                 newToDoDivEl.appendChild(buttonElement)
 
-                document.querySelector("body").appendChild(newToDoDivEl)
+                document.querySelector("#todos").appendChild(newToDoDivEl)
             }
         }
     </script>
