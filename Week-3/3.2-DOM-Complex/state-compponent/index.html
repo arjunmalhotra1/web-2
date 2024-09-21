@@ -21,20 +21,27 @@
             render()
         }
 
+        // Create TodoComponent.
+        function createTodoComponent(todo) {
+            const newToDoDivEl = document.createElement("div")
+            const h1Element = document.createElement("h1")
+            const buttonElement = document.createElement("button")
+            h1Element.innerHTML = todo.title
+            buttonElement.innerHTML = "delete"                
+            newToDoDivEl.appendChild(h1Element)
+            newToDoDivEl.appendChild(buttonElement)
+
+            return newToDoDivEl
+
+        }
+
+        // render function obliges to the state. Takes the state and modifies the DOM.
         function render() {
             // We first clear the div and then we iterate over current state(todos) & then 
             // populate the div
             document.querySelector("#todos").innerHTML = ""
             for(let i= 0;i<todos.length;i++) {
-                const todo = todos[i];
-                const newToDoDivEl = document.createElement("div")
-                const h1Element = document.createElement("h1")
-                const buttonElement = document.createElement("button")
-                h1Element.innerHTML = todo.title
-                buttonElement.innerHTML = "delete"                
-                newToDoDivEl.appendChild(h1Element)
-                newToDoDivEl.appendChild(buttonElement)
-
+               const newToDoDivEl = createTodoComponent(todos[i])
                 document.querySelector("#todos").appendChild(newToDoDivEl)
             }
         }
