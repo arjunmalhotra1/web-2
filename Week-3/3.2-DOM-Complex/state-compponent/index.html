@@ -31,16 +31,23 @@
             render()
         }
 
+        function deleteIndex(id) {
+            todos.splice(id,1) // removes the first element from arr
+            render()
+        }
+
 
         // Create TodoComponent. // We WRITE THIS & STATE IN REACT
-        function createTodoComponent(todo) {
+        function createTodoComponent(todo,id) {
             const newToDoDivEl = document.createElement("div")
             const h1Element = document.createElement("h1")
             const buttonElement = document.createElement("button")
             h1Element.innerHTML = todo.title
             buttonElement.innerHTML = "delete"                
+            buttonElement.onclick = function() {deleteIndex(id)}
             newToDoDivEl.appendChild(h1Element)
             newToDoDivEl.appendChild(buttonElement)
+            newToDoDivEl.setAttribute("id",id)
 
             return newToDoDivEl
 
@@ -53,7 +60,7 @@
             // populate the div
             document.querySelector("#todos").innerHTML = ""
             for(let i=0; i<todos.length; i++) {
-               const newToDoDivEl = createTodoComponent(todos[i])
+               const newToDoDivEl = createTodoComponent(todos[i],i)
                 document.querySelector("#todos").appendChild(newToDoDivEl)
             }
         }
