@@ -2,6 +2,7 @@
     <body>
         <input type="text"></input>
         <button onclick="addTodo()"> Add todo!</button>
+        <button onclick="deleteLastTodo()"> Delete last todo!</button>
         <div id="todos"></div>
     </body>
 
@@ -14,10 +15,13 @@
             })
             render();
         }
-        function deleteTodo() {
+        function deleteLastTodo() {
             // delete todos[2]
             // todos = todos.filter(x => x.id === 1)
             // simply delete the second Todo
+            // "todos.length-1" -> where we want to delete from
+            // "1" -> how many elements we want to delete.
+            todos = todos.splice(todos.length-1,1) // removes the last element from arr
             render()
         }
 
@@ -41,7 +45,7 @@
             // We first clear the div and then we iterate over current state(todos) & then 
             // populate the div
             document.querySelector("#todos").innerHTML = ""
-            for(let i= 0;i<todos.length;i++) {
+            for(let i=0; i<todos.length; i++) {
                const newToDoDivEl = createTodoComponent(todos[i])
                 document.querySelector("#todos").appendChild(newToDoDivEl)
             }
