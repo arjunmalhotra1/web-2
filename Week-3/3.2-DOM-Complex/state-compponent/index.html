@@ -21,7 +21,7 @@
             render()
         }
 
-        // Create TodoComponent.
+        // Create TodoComponent. // We WRITE THIS & STATE IN REACT
         function createTodoComponent(todo) {
             const newToDoDivEl = document.createElement("div")
             const h1Element = document.createElement("h1")
@@ -36,6 +36,7 @@
         }
 
         // render function obliges to the state. Takes the state and modifies the DOM.
+        // REACT SOMEHOW DOES THIS FOR US WITH IT'S LIBRARY
         function render() {
             // We first clear the div and then we iterate over current state(todos) & then 
             // populate the div
