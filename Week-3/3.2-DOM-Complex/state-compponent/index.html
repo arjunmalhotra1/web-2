@@ -23,6 +23,7 @@
             // "todos.length-1" -> where we want to delete from
             // "1" -> how many elements we want to delete.
             todos.splice(todos.length-1,1) // removes the last element from arr
+            // We can do todos.pop() as well.
             render()
         }
 
@@ -45,6 +46,8 @@
             h1Element.innerHTML = todo.title
             buttonElement.innerHTML = "delete"                
             buttonElement.onclick = function() {deleteIndex(id)}
+            // He did this like this below:
+            // buttonElement.setAttribute("onclick","deleteIndex("+id+")")
             newToDoDivEl.appendChild(h1Element)
             newToDoDivEl.appendChild(buttonElement)
             newToDoDivEl.setAttribute("id",id)
