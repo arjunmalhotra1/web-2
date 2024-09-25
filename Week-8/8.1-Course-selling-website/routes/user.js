@@ -67,14 +67,20 @@ userRouter.get('/purchases',userMiddleware, async function(req, res) {
         userid
     })
 
+
+
     let purchasedCourseIds = []
     for(let i=0;i<coursesPurchasedByUser.length;i++) {
         purchasedCourseIds.push(coursesPurchasedByUser[i].courseId)
     }
-     // Another way to do this is with the "=>"
     const courseData = await courseModel.find({
         _id: {$in : purchasedCourseIds}
     })
+
+    // Another way to do it.
+    // const courseData = await courseModel.find({
+    //     _id: {$in : coursesPurchasedByUser.map(x => x._id.toString())}
+    // })
 
 
     res.json({
