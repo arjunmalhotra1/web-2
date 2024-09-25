@@ -74,7 +74,9 @@ adminRouter.get('/signin', async function(req, res) {
     const admin = await AdminModel.findOne({
         email: email,
     });
-    console.log("admin =", admin)
+    
+
+    // Currently it crashes if "admin.password" is null that is if the admin doesn't exist in the database.
     const passwordMatch = bcrypt.compare(password, admin.password)
 
 
@@ -112,9 +114,10 @@ adminRouter.post("/course", adminMiddleware, async function(req, res) {
     })
 })
 
-adminRouter.put("/update/{courseid}", adminMiddleware, async function(req, res) {
-    const adminId = req.userId
-    const {title, description, price, imageUrl,courseId} = req.body;
+adminRouter.put("/update/courseid", adminMiddleware, async function(req, res) {
+    const adminId = req.adminid
+    const courseId = req.params.courseid
+    const {title, description, price, imageUrl} = req.body;
     const course = await courseModel.updateOne({
         _id: courseId,
         creatorId: adminId
@@ -126,16 +129,22 @@ adminRouter.put("/update/{courseid}", adminMiddleware, async function(req, res) 
         creatorId: adminId
     })
 
-    // Create a web3 Saas in 6 ourss for uploading images
+    // Create a web3 Saas in 6 hours for uploading images
     res.json({
         message: "course updated",
         courseId: course._id
     })
 })
 
-adminRouter.get("/course/bulk", function(req, res) {
+adminRouter.get("/course/bulk", adminMiddleware, async function(req, res) {
+    const adminid = req.adminid
+
+    const courses = await courseModel.find({
+        creatorId: adminid
+    })
+
     res.json({
-        message: "signup endpoint"
+        courses
     })
 })
 
