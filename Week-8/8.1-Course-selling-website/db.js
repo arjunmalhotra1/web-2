@@ -28,7 +28,7 @@ const courseSchema = new Schema({
 })
 
 const purchaseSchema = new Schema({
-  courseId: ObjectId,
+  courseId: ObjectId, // TODO: This course ID needs to refer the courseId of the course schema.
   userId: ObjectId
 })
 
