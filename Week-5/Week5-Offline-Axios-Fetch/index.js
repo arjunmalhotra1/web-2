@@ -47,8 +47,23 @@ async function main5() {
     const response = await axios.post("https://httpbin.org/post")
     console.log("Post request axios: ",response.data)
 }
-
 main5()
+
+// Post request with axios everything in sa single object.
+async function main51() {
+    const response = await axios({
+        url: "https://httpdump.app/dumps/9d3de0e8-01af-4594-ac9d-10c33da14e45",
+        method:"POST",
+        headers: {
+            Authorization: "Bearer 123-single-object",
+        },
+        data: {
+            username: "harkirat-single-object"
+        }
+    })
+    console.log("Post 51: ",response.data)
+}
+main51()
 
 // Post request with fetch without promise.then and Headers
 async function main6() {
