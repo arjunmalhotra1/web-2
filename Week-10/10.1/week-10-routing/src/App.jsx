@@ -4,11 +4,15 @@ import './App.css'
 
 function App() {
 
+  function focusOnInput() {
+    document.getElementById("name").focus()
+  }
+
   return <div>
     Sign up
+    <input id="name" type={"text"}></input>
     <input type={"text"}></input>
-    <input type={"text"}></input>
-    <button> submit</button>
+    <button onClick={focusOnInput}> submit</button>
     </div>
 }
 
