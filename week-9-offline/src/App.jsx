@@ -8,14 +8,21 @@ function App() {
 }
 
 const ToggleMessage = () => {
-    //const [isVisible, setIsVisible] = useState(false); //defining a new state variable
+    const [isVisible, setIsVisible] = useState(false); //defining a new state variable
     // When the value of the state variable changes the component aht uses the state variable, re-renders
+    // useState return an array of 2 things: [true, function] 
 
     // const isVisible = true; // This is  not a state variable
+  function toggle() {
+    // isVisible = !isVisible // We should never update a state variable like this
+    // We should always update the state variables values using the second variable
+    // const [isVisible, setIsVisible] = useState(false);
+    setIsVisible(!isVisible)
+  }
 
     return (
         <div>
-            <button onClick={() => setIsVisible(!isVisible)}>
+            <button onClick={toggle}>
                 Toggle Message
             </button>
             {isVisible && <p>This message is conditionally rendered!</p>}
