@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
+      Footer | Contact Us
     </BrowserRouter>
     </div>
 }
