@@ -1,15 +1,9 @@
-// import { useState  } from "react";
+import { useState  } from "react";
 import { PostComponent } from "./Post";
 function App() {
-  
 
-  const posts = [{
-    name: "chelsea",
-    subtitle: "23,888 followers",
-    time: "2m ago",
-    image: "https://www.shutterstock.com/image-vector/chelsea-football-club-fc-icon-600nw-2276198713.jpg",
-    description: "Next match is vs Liverpool"
-  }]
+  const [posts, setPosts] = useState([])
+
 
   const postComponents = posts.map(post => <PostComponent 
     name={post.name}
@@ -21,13 +15,13 @@ function App() {
   )
 
   function addPost() {
-    posts.push({
+    setPosts([...posts,{
     name: "chelsea",
     subtitle: "23,888 followers",
     time: "2m ago",
     image: "https://www.shutterstock.com/image-vector/chelsea-football-club-fc-icon-600nw-2276198713.jpg",
     description: "Next match is vs Liverpool"
-    })
+    }])
 
   }
 
