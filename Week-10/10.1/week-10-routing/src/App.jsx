@@ -3,12 +3,13 @@ import './App.css'
 
 function App() {
   const [currentCount, setCurrentCount] = useState(0)
-  let timer = 0
+  const [timer, setTimer] = useState(0)
 
   function startClock() {
-    timer = setInterval(function() {
+    let value = setInterval(function() {
       setCurrentCount(c => c+1)
     }, 1000)
+    setTimer(value)
   }
 
   function stopClock() {
