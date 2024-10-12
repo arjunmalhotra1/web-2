@@ -5,6 +5,8 @@ import './App.css'
 function App() {
 
   return <div>
+    {/* This is asking for the entire hml again. If you look at the inspect element on the BrowserRouter
+    We are fetching the index.html file agian */}
     <a href="/">Allen</a> | <a href="/neet/online-coaching-class-11">Class 11</a> | <a href="/neet/online-coaching-class-12">Class 12</a>
     <BrowserRouter>
       <Routes>
