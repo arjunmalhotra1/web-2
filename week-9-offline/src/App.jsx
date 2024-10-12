@@ -7,7 +7,7 @@ function App() {
       1
     </div>
   </div>
-  <img style={{cursor: "pointer"}} src={"https://cdn-icons-png.flaticon.com/512/472/472371.png"} width={20} />
+  <img style={{cursor: "pointer"}} src={"https://cdn-icons-png.flaticon.com/512/472/472371.png"} width={40} />
   </div>
 }
 
