@@ -5,11 +5,10 @@ import './App.css'
 function App() {
 
   return <div>
-  
+    <BrowserRouter>
     <Link to="/">Allen</Link> | 
     <Link to="/neet/online-coaching-class-11">Class 11</Link> | 
     <Link to="/neet/online-coaching-class-12">Class 12</Link>
-    <BrowserRouter>
       <Routes>
         <Route path="/neet/online-coaching-class-11" element={<Class11Program />} />
         <Route path="/neet/online-coaching-class-12" element={<Class12Program />} />
