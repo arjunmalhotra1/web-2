@@ -4,6 +4,14 @@ import './App.css'
 
 function App() {
 
+  const router = [{
+    path: "",
+    element: <Class11Program />
+  },{
+
+  },{}
+]
+
   return <div>
     <BrowserRouter>
       <Routes>
