@@ -5,6 +5,7 @@ import './App.css'
 function App() {
 
   return <div>
+    {/* No buffer and no html coming form backend. This is a true Single Page Application using Link component */}
     <BrowserRouter>
     <Link to="/">Allen</Link> | 
     <Link to="/neet/online-coaching-class-11">Class 11</Link> | 
