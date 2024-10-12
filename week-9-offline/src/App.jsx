@@ -5,9 +5,29 @@ function App() {
       <ToggleMessage />
       <ToggleMessage />
       <ToggleMessage />
+      <Increment />
     </div>
   )
 }
+
+const Increment = () => {
+  const [notificationCount, setnotificationCount] = useState(0);
+
+console.log("re-render")
+function increment() {
+  setnotificationCount(notificationCount+1)
+}
+
+  return (
+      <div>
+          <button onClick={increment}>
+              increment Message
+          </button>
+          {notificationCount}
+      </div>
+  );
+};
+
 
 const ToggleMessage = () => {
     const [isVisible, setIsVisible] = useState(false); //defining a new state variable
