@@ -3,6 +3,8 @@ function App() {
   return (
     <div style={{background: "#dfe6e9",height: "100vh" }}>
       <ToggleMessage />
+      <ToggleMessage />
+      <ToggleMessage />
     </div>
   )
 }
@@ -13,6 +15,8 @@ const ToggleMessage = () => {
     // useState return an array of 2 things: [true, function] 
 
     // const isVisible = true; // This is  not a state variable
+
+  console.log("re-render")
   function toggle() {
     // isVisible = !isVisible // We should never update a state variable like this
     // We should always update the state variables values using the second variable
