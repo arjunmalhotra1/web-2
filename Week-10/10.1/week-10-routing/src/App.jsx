@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom"
 import './App.css'
 
 function App() {
 
   return <div>
-    {/* No buffer and no html coming form backend. This is a true Single Page Application using Link component */}
     <BrowserRouter>
     <Link to="/">Allen</Link> | 
     <Link to="/neet/online-coaching-class-11">Class 11</Link> | 
@@ -32,8 +31,15 @@ function Class11Program() {
 }
 
 function Class12Program() {
+  const navigate = useNavigate()
+
+  function redirectUser(){
+    navigate("/")
+  }
+
   return <div>
     NEET program for Class 12th
+    <button onClick={redirectUser}> Go back to Landing page</button>
   </div>
 }
 
