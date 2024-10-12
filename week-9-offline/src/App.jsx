@@ -1,40 +1,14 @@
 import { useState  } from "react";
 import { PostComponent } from "./Post";
 function App() {
-
-  const [posts, setPosts] = useState([])
-
-
-  const postComponents = posts.map(post => <PostComponent 
-    name={post.name}
-    subtitle={post.subtitle}
-    time={post.time}
-    image={post.image}
-    description={post.description}
-    />
-  )
-
-  function addPost() {
-    setPosts([...posts,{
-    name: "chelsea",
-    subtitle: "23,888 followers",
-    time: "2m ago",
-    image: "https://www.shutterstock.com/image-vector/chelsea-football-club-fc-icon-600nw-2276198713.jpg",
-    description: "Next match is vs Liverpool"
-    }])
-
-  }
-
-  return (
-    <div style={{background: "#dfe6e9",height: "100vh" }}>
-      <button onClick={addPost}>Add Post </button>
-      <div style={{display:"flex", justifyContent: "center"}}>
-          <div>
-            {postComponents}
-          </div>
-      </div>
+  return <div>
+  <div style={{display: "flex"}}>
+    <div style={{background: "red",borderRadius: 20, width:20, height: 25 , paddingLeft: 10, paddingTop: 5}}>
+      1
     </div>
-  )
+  </div>
+  <img style={{cursor: "pointer"}} src={"https://cdn-icons-png.flaticon.com/512/472/472371.png"} width={20} />
+  </div>
 }
 
 
