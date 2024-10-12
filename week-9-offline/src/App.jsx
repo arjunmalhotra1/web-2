@@ -45,11 +45,11 @@ function PostComponent({name, subtitle, time, image, description}) {
           {name}
         </b>
       <div>{subtitle}</div>
-      <div style={{display: 'flex'}}>
+     {time!== undefined && <div style={{display: 'flex'}}>
         <div>{time}</div>
         <img src={"https://i.etsystatic.com/19543171/r/il/cd0d78/4477428278/il_570xN.4477428278_i2tn.jpg"}
         style={{width: 12  , height: 12}} />
-      </div>
+      </div>}
       </div>
     </div>
 
