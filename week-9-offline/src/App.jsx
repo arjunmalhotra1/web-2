@@ -1,15 +1,19 @@
-import { useState  } from "react";
-import { PostComponent } from "./Post";
+import { useState, useEffect  } from "react";
 
 
 function App() {
   const [count, setCount] = useState(1)
-
-  function increaseCount() {
+  
+ useEffect(function(){
+  setInterval(increaseCount, 1000)
+ },[])
+  
+ 
+ function increaseCount() {
     setCount(count+1)
   }
 
-  setInterval(increaseCount, 1)
+  
   
   return <div>
     {count}
