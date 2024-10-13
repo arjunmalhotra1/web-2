@@ -36,6 +36,11 @@ const Timer = () => {
     }
 
 
+    // One more use case is if on the UI you are on a tab that is subscribe to the web sockets and when you change the UI tab, you need to run the code to unsubscribe form the web socket because the user 
+    // is no more on the tab that uses the web sockets. We want the clean up function to run and stop the subscription of the web sockets.
+    // Like in gather.town When we are in a room we want to be subscribe to any other person coming into the room
+    // When we move to another room we have to resubscribe to the Room2 but also unsubscribe from Room1.
+
   }, [])
 
   return <div>{seconds} seconds elapsed</div>
