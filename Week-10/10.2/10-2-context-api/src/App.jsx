@@ -1,21 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 
-function App() {
-  const [bulbOn, setBulbOn] = useState(true)  
 
+// Context is created outside the component chain, usually in a separate file.
+const bulbContext = React.createContext()
+
+
+function App() {
+  const [bulbOn, setBulbOn] = useState(true) 
+  
   return <div>
-    <Light bulbOn={bulbOn} setBulbOn={setBulbOn} />
+    <Light />
   </div>
 }
 
 function Light({bulbOn, setBulbOn}) {
   
   return <div>
-    <LightBulb bulbOn={bulbOn} />
-    <LightSwitch bulbOn={bulbOn} setBulbOn={setBulbOn} />
+    <LightBulb />
+    <LightSwitch />
   </div>
 }
 
