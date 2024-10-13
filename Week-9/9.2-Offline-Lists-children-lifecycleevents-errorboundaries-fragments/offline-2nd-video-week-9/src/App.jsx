@@ -6,15 +6,16 @@ import './App.css'
 function App() {
   
 
-  return <div>
+  return <div style={{display:'flex'}}>
     <Card innerContent={ "hi There"} />
+    <Card innerContent={ <div style={{color: "green"}}>hello there</div>} />
   </div>
 }
 
 function Card({ innerContent }) {
-  return <div style={{background: "black", borderRadius: 10, color:"white" }}>
+  return <span style={{background: "black", borderRadius: 10, color:"white", padding:10, margin: 10 }}>
     {innerContent}
-  </div>
+  </span>
 }
 
 export default App
