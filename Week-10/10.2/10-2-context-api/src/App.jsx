@@ -6,24 +6,26 @@ import './App.css'
 // Context is created outside the component chain, usually in a separate file.
 const BulbContext = createContext()
 
-
-function App() {
+function BulbProvider({children}) {
   const [bulbOn, setBulbOn] = useState(true) 
-
-  return <div>
-    <BulbContext.Provider value={{
+  return <BulbContext.Provider value = {{
       bulbOn: bulbOn,
       setBulbOn: setBulbOn
-    }}>
-
-      <Light />
-
+  }}>
+    {children}
     </BulbContext.Provider>
+}
+
+
+function App() {
+  return <div>
+    <BulbProvider>
+      <Light />
+    </BulbProvider>
   </div>
 }
 
 function Light() {
-  
   return <div>
     <LightBulb />
     <LightSwitch />
