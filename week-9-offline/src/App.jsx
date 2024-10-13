@@ -23,6 +23,10 @@ function App() {
     setCount(function(currentValue){
       return currentValue+1
     })
+
+    // count here is pinned to the original value whose value is 1, because we haven't
+    // give it as a dependency in the array for useEffect on line 18.
+    // setCount(count + 1)
   }
 
   return <div>
