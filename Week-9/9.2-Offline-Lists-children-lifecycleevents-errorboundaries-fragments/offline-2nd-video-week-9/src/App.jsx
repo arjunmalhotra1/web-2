@@ -7,7 +7,7 @@ function App() {
   
 
   return <div>
-    <Card innerContent={<div> hi There </div>} />
+    <Card innerContent={ "hi There"} />
   </div>
 }
 
