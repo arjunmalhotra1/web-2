@@ -1,14 +1,25 @@
 import { useState  } from "react";
 import { PostComponent } from "./Post";
 function App() {
+
+  function increaseCount() {
+    setCount(count + 1)
+  }
+
+  const [count, setCount] = useState(1)
+
   return <div>
   <div style={{display: "flex"}}>
     <div style={{background: "red",borderRadius: 20, width:20, height: 25 , paddingLeft: 10, paddingTop: 5}}>
-      1
+      {count}
     </div>
   </div>
   <img style={{cursor: "pointer"}} src={"https://cdn-icons-png.flaticon.com/512/472/472371.png"} width={40} />
+
+  <button onClick={increaseCount}> Increase the count </button>
   </div>
+
+  
 }
 
 
