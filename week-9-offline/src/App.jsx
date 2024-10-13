@@ -8,6 +8,9 @@ function App() {
   
   // Whatever code we write inside the function that is taken as an argument by useEffect, only runs
   // when the components mounts/renders for the very first time.
+
+  // If we want to use a stateVariable inside useEffect then we have to put it inside the 
+  // array as a dependency.
  useEffect(function(){
   console.log("above set interval")
   setInterval(increaseCount, 1000)
