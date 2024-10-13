@@ -4,33 +4,13 @@ import { useState, useEffect  } from "react";
 function App() {
   const [count, setCount] = useState(1)
 
-
-  
-  // Whatever code we write inside the function that is taken as an argument by useEffect, only runs
-  // when the components mounts/renders for the very first time.
-
-  // If we want to use a stateVariable inside useEffect then we have to put it inside the 
-  // array as a dependency.
-  // Another way is online 23, we pass in the function to setCount which gets the current value as an input
  useEffect(function(){
-  console.log("above set interval")
   setInterval(increaseCount, 1000)
- },[])
+ },[]) //This effect will run on mount because the array is empty.
   
  
  function increaseCount() {
-  // console.log("increase count called "+count)
-    setCount(function(currentValue){
-      console.log("currentValue inside setCount "+ currentValue)
-      return currentValue+1
-    })
-
-    // Arrow function works as well. as above.
-    // setCount(currentValue => currentValue+1)
-
-    // count here is pinned to the original value whose value is 1, because we haven't
-    // give it as a dependency in the array for useEffect on line 18.
-    // setCount(count + 1)
+    setCount(currentValue => currentValue+1)
   }
 
   return <div>
