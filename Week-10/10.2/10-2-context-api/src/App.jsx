@@ -4,24 +4,25 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
+  
 
   return <div>
-    <LightBulb />
+    <Light />
   </div>
 }
 
 // bulbOn is a prop to the bulb state component
 // bulbOn, setBulbOn are props to the ToggleBulbState component.
-function LightBulb() {
+function Light() {
   const [bulbOn, setBulbOn] = useState(true)
   return <div>
-    <BulbState bulbOn={bulbOn} />
-    <ToggleBulbState bulbOn={bulbOn} setBulbOn={setBulbOn} />
+    <LightBulb bulbOn={bulbOn} />
+    <LightSwitch bulbOn={bulbOn} setBulbOn={setBulbOn} />
   </div>
 }
 
 
-function BulbState({bulbOn}) {
+function LightBulb({bulbOn}) {
   
   return <div>
     {bulbOn ? "Bulb on":"Bulb off"}
@@ -30,7 +31,7 @@ function BulbState({bulbOn}) {
 
 
 
-function ToggleBulbState({bulbOn, setBulbOn}) {
+function LightSwitch({bulbOn, setBulbOn}) {
 
   function toggle() {
     setBulbOn(!bulbOn)
