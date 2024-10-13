@@ -5,7 +5,12 @@ function App() {
 
   const [currentTab, SetCurrentTab] = useState("feed")
 
-  // NoteL onClick takes a function.
+  // When a user clicks on any of the button the screen on Linkedin changes for which we need a useEffect for the request to go out to the backend.
+  useEffect(function(){
+    console.log("send request to backend to get data for tab " + currentTab)
+  }, [currentTab])
+
+  // Note onClick takes a function.
   return <div>
     <button onClick={function(){SetCurrentTab("feed")}} style={{color: currentTab=="feed"? "red": "black"}}>Feed</button>
     <button onClick={function(){SetCurrentTab("notifications")}} style={{color: currentTab=="notifications"?"red":"black"}}>Notifications</button>
