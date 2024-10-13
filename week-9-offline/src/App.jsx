@@ -2,31 +2,15 @@ import { useState, useEffect  } from "react";
 
 
 function App() {
-  const [count, setCount] = useState(1)
-  const [count2, setCount2] = useState(1)
 
- useEffect(function(){
-  setInterval(increaseCount, 5000)
-  setInterval(decreaseCount, 8000)
- },[])
+  const [currentTab, SetCurrentTab] = useState("feed")
 
-
- useEffect(function(){
-  console.log("the count has been updated to: " + count)
- },[count]) // This effect runs on mount and every time when the count changes. This is what dependency array tracts. It doesn't run when count2 change.
-  
- 
- function increaseCount() {
-    setCount(currentValue => currentValue+1)
-  }
-
-  function decreaseCount() {
-    setCount2(currentValue => currentValue-1)
-  }
-
-
+  // NoteL onClick takes a function.
   return <div>
-    {count} {count2}
+    <button onClick={function(){SetCurrentTab("feed")}} style={{color: currentTab=="feed"? "red": "black"}}>Feed</button>
+    <button onClick={function(){SetCurrentTab("notifications")}} style={{color: currentTab=="notifications"?"red":"black"}}>Notifications</button>
+    <button onClick={function(){SetCurrentTab("messages")}} style={{color: currentTab=="messages"?"red":"black"}}>Messages</button>
+    <button onClick={function(){SetCurrentTab("jobs")}} style={{color: currentTab=="jobs"?"red":"black"}}>Jobs</button>
   </div>
 }
 
