@@ -3,25 +3,30 @@ import { useState, useEffect  } from "react";
 
 function App() {
   const [count, setCount] = useState(1)
+  const [count2, setCount2] = useState(1)
 
  useEffect(function(){
-  console.log("Above set Interval")
-  setInterval(increaseCount, 1000)
- },[]) //This effect will runs only on mount because the array is empty.
+  setInterval(increaseCount, 5000)
+  setInterval(decreaseCount, 8000)
+ },[])
 
 
  useEffect(function(){
   console.log("the count has been updated to: " + count)
- },[count]) // This effect runs every time count changes. This is what dependency array tracts.
+ },[count]) // This effect runs on mount and every time when the count changes. This is what dependency array tracts. It doesn't run when count2 change.
   
  
  function increaseCount() {
     setCount(currentValue => currentValue+1)
   }
 
+  function decreaseCount() {
+    setCount2(currentValue => currentValue-1)
+  }
+
 
   return <div>
-    {count}
+    {count} {count2}
   </div>
 }
 
