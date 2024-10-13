@@ -11,6 +11,7 @@ function App() {
 
   // If we want to use a stateVariable inside useEffect then we have to put it inside the 
   // array as a dependency.
+  // Another way is online 23, we pass in the function to setCount which gets the current value as an input
  useEffect(function(){
   console.log("above set interval")
   setInterval(increaseCount, 1000)
@@ -19,7 +20,9 @@ function App() {
  
  function increaseCount() {
   console.log("increase count called")
-    setCount(count+1)
+    setCount(function(currentValue){
+      return currentValue+1
+    })
   }
 
   return <div>
