@@ -1,20 +1,23 @@
 import { useState, useEffect  } from "react";
 
-
 function App() {
 
   const [currentTab, SetCurrentTab] = useState(1)
   const [tabData, SetTabData] = useState({})
+  const [loading, SetLoading ] = useState(true)
+
 
   // When a user clicks on any of the button the screen on Linkedin changes for which we need a useEffect for the request to go out to the backend. We can lazily load the data from the backend, that is after the user 
   // click the tab we send a fetch request.
   useEffect(function(){
     console.log("send request to backend to get data for tab " + currentTab)
     
+    SetLoading(true)
     // We can send a request to the backend using Fetch inside useEffect.
     fetch("https://jsonplaceholder.typicode.com/todos/"+currentTab).then(async res => {
       const json = await res.json()
       SetTabData(json)
+      SetLoading(false)
     })
 
   }, [currentTab])
@@ -28,7 +31,8 @@ function App() {
 
   <br></br>
     {/* Fetch requests fetches the data from the backend */}
-    {tabData.title}
+    {/* {tabData.title} */}
+    {loading ?"Loading...":tabData.title}
   </div>
 }
 
