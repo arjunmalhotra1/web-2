@@ -9,7 +9,7 @@ function App() {
     setCount(count + 1)
   }
 
-  // This breaks the count.
+
   setInterval(increaseCount, 1000)
 
   const [count, setCount] = useState(1)
