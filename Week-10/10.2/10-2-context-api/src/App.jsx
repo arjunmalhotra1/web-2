@@ -11,10 +11,10 @@ function App() {
   </div>
 }
 
-function Light({bulbOn, setBulbOn, messages, setMessages}) {
+function Light({bulbOn, setBulbOn}) {
   
   return <div>
-    <LightBulb bulbOn={bulbOn} a={a} messages={messages} setUser={setUser} />
+    <LightBulb bulbOn={bulbOn} />
     <LightSwitch bulbOn={bulbOn} setBulbOn={setBulbOn} />
   </div>
 }
