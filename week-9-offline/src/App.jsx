@@ -20,7 +20,7 @@ function App() {
 const Timer = () => {
   const [seconds, setSeconds] = useState(0)
 
-  // Problem with this code is, even if the timer code un-renders, the clock doesn't stop.
+  // Problem with this code is, even if the timer code un-renders(not on the screen), the clock doesn't stop.
   useEffect(()=>{
     setInterval(() => {
       console.log("from inside clock")
