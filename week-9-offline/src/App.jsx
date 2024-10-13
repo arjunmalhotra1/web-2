@@ -1,39 +1,26 @@
 import { useState, useEffect  } from "react";
 
+// Problem with this code is, if we ever unmount the Timer component, we remove Timer component
+// Clock still remains active. Timer doesn't stop the clock if it gets unmounted.
 function App() {
 
-  const [currentTab, SetCurrentTab] = useState(1)
-  const [tabData, SetTabData] = useState({})
-  const [loading, SetLoading ] = useState(true)
-
-
-  // When a user clicks on any of the button the screen on Linkedin changes for which we need a useEffect for the request to go out to the backend. We can lazily load the data from the backend, that is after the user 
-  // click the tab we send a fetch request.
-  useEffect(function(){
-    console.log("send request to backend to get data for tab " + currentTab)
-    
-    SetLoading(true)
-    // We can send a request to the backend using Fetch inside useEffect.
-    fetch("https://jsonplaceholder.typicode.com/todos/"+currentTab).then(async res => {
-      const json = await res.json()
-      SetTabData(json)
-      SetLoading(false)
-    })
-
-  }, [currentTab]) // If this dependency array is empty [] it will run only when the component mounts.
-
-  // Note onClick takes a function.
-  return <div>
-    <button onClick={function(){SetCurrentTab(1)}} style={{color: currentTab==1? "red": "black"}}>Todo #1</button>
-    <button onClick={function(){SetCurrentTab(2)}} style={{color: currentTab==2?"red":"black"}}>Todo #2</button>
-    <button onClick={function(){SetCurrentTab(3)}} style={{color: currentTab==3?"red":"black"}}>Todo #3</button>
-    <button onClick={function(){SetCurrentTab(4)}} style={{color: currentTab==4?"red":"black"}}>Todo #4</button>
-
-  <br></br>
-    {/* Fetch requests fetches the data from the backend */}
-    {/* {tabData.title} */}
-    {loading ?"Loading...":tabData.title}
+  <div>
+    <Timer />
   </div>
+
+  const Timer = () => {
+    const [seconds, setSeconds] = useState(0)
+
+    useEffect(()=>{
+      setInterval(() => {
+        setSeconds(prev => prev +1);
+      }, 1000)
+    }, [])
+
+    return <div>{seconds} seconds elapsed</div>
+
+  }
+
 }
 
 
