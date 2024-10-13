@@ -5,6 +5,7 @@ function App() {
   const [count, setCount] = useState(1)
 
  useEffect(function(){
+  console.log("Above set Interval")
   setInterval(increaseCount, 1000)
  },[]) //This effect will runs only on mount because the array is empty.
 
