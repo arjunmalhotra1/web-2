@@ -1,10 +1,16 @@
 import { useState  } from "react";
 import { PostComponent } from "./Post";
+
+
+
 function App() {
 
   function increaseCount() {
     setCount(count + 1)
   }
+
+  // This breaks the count.
+  setInterval(increaseCount, 1000)
 
   const [count, setCount] = useState(1)
 
@@ -16,7 +22,7 @@ function App() {
   </div>
   <img style={{cursor: "pointer"}} src={"https://cdn-icons-png.flaticon.com/512/472/472371.png"} width={40} />
 
-  <button onClick={increaseCount}> Increase the count </button>
+  
   </div>
 
   
