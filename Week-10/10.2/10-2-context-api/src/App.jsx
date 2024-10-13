@@ -6,7 +6,29 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  return 
+  return <div>
+    <LightBulb />
+  </div>
+}
+
+function LightBulb() {
+  return <div>
+    <BulbState />
+    <ToggleBulbState />
+  </div>
+}
+
+
+function BulbState() {
+  return <div>
+
+  </div>
+}
+
+function ToggleBulbState() {
+  return <div>
+    <button> Toggle the button </button>
+  </div>
 }
 
 export default App
