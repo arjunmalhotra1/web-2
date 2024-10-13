@@ -30,7 +30,9 @@ const Timer = () => {
 
     // useEffect can return a cleanup function
     return function() {
-      
+      clearInterval() 
+      // Just like setInterval function that Javascript provides
+      // We get a clearInterval
     }
 
 
