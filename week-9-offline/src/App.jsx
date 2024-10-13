@@ -20,7 +20,7 @@ function App() {
       SetLoading(false)
     })
 
-  }, [currentTab])
+  }, [currentTab]) // If this dependency array is empty [] it will run only when the component mounts.
 
   // Note onClick takes a function.
   return <div>
