@@ -11,26 +11,34 @@ function App() {
 }
 
 function LightBulb() {
+  const [bulbOn, setBulbOn] = useState(true)
   return <div>
-    <BulbState />
-    <ToggleBulbState />
+    <BulbState bulbOn={bulbOn} />
+    <ToggleBulbState bulbOn={bulbOn} setBulbOn={setBulbOn} />
   </div>
 }
 
 
-function BulbState() {
-  const [bulbOn, setBulbOn] = useState(true)
+function BulbState({bulbOn}) {
+  
   return <div>
     {bulbOn ? "Bulb on":"Bulb off"}
   </div>
 }
-// We need to update the state variable in the ToggleBulbState, we need to roll it down.
-// We defined it in BulbState we want to use it on ToggleBulbState
-// We need to roll the state up.
-function ToggleBulbState() {
+
+
+
+function ToggleBulbState({bulbOn, setBulbOn}) {
+
+  function toggle() {
+    setBulbOn(!bulbOn)
+  }
+  
   return <div>
-    <button> Toggle the button </button>
+    <button onClick={toggle}> Toggle the bulb </button>
   </div>
 }
+
+
 
 export default App
