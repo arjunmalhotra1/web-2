@@ -22,7 +22,7 @@ const Timer = () => {
 
   // Problem with this code is, even if the timer code un-renders(Goes away from the DOM/not on the screen), the clock doesn't stop.
   useEffect(()=>{
-    setInterval(() => {
+    let clock = setInterval(() => {
       console.log("from inside clock")
       setSeconds(prev => prev +1);
     }, 1000)
@@ -30,7 +30,7 @@ const Timer = () => {
 
     // useEffect can return a cleanup function
     return function() {
-      clearInterval() 
+      clearInterval(clock) 
       // Just like setInterval function that Javascript provides
       // We get a clearInterval
     }
