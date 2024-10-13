@@ -32,7 +32,7 @@ const Timer = () => {
     return function() {
       clearInterval(clock) 
       // Just like setInterval function that Javascript provides
-      // We get a clearInterval
+      // We get a clearInterval. When the Timer component unmounts because of line 15 this code is run
     }
 
 
