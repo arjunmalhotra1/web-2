@@ -19,8 +19,9 @@ function App() {
   
  
  function increaseCount() {
-  console.log("increase count called")
+  // console.log("increase count called "+count)
     setCount(function(currentValue){
+      console.log("currentValue inside setCount "+ currentValue)
       return currentValue+1
     })
 
