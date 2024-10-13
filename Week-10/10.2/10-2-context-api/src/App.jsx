@@ -1,23 +1,28 @@
-import { useState } from 'react'
+import { useState, createContext, useContext } from 'react'
 
 import './App.css'
 
 
 // Context is created outside the component chain, usually in a separate file.
-const BulbContext = React.createContext()
+const BulbContext = createContext()
 
 
 function App() {
   const [bulbOn, setBulbOn] = useState(true) 
 
   return <div>
-    <BulbContext.Provider>
+    <BulbContext.Provider value={{
+      bulbOn: bulbOn,
+      setBulbOn: setBulbOn
+    }}>
+
       <Light />
+
     </BulbContext.Provider>
   </div>
 }
 
-function Light({bulbOn, setBulbOn}) {
+function Light() {
   
   return <div>
     <LightBulb />
@@ -26,8 +31,8 @@ function Light({bulbOn, setBulbOn}) {
 }
 
 
-function LightBulb({bulbOn}) {
-  const bulbOn = getContext(BulbContext)
+function LightBulb() {
+  const {bulbOn} = useContext(BulbContext)
 
   return <div>
     {bulbOn ? "Bulb on":"Bulb off"}
@@ -36,8 +41,8 @@ function LightBulb({bulbOn}) {
 
 
 
-function LightSwitch({bulbOn, setBulbOn}) {
-
+function LightSwitch() {
+  const {bulbOn, setBulbOn} = useContext(BulbContext)
   function toggle() {
     setBulbOn(!bulbOn)
   }
