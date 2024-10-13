@@ -7,7 +7,13 @@ function App() {
   
 
   return <div>
-    
+    <Card innerContent={<div> hi There </div>} />
+  </div>
+}
+
+function Card({ innerContent }) {
+  return <div style={{background: "black", borderRadius: 10, color:"white" }}>
+    {innerContent}
   </div>
 }
 
