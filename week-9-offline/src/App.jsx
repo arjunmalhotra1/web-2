@@ -3,25 +3,33 @@ import { useState, useEffect  } from "react";
 // Problem with this code is, if we ever unmount the Timer component, we remove Timer component
 // Clock still remains active. Timer doesn't stop the clock if it gets unmounted.
 function App() {
+  const [showTimer, setShowTimer] = useState(true)
 
-  <div>
-    <Timer />
+  useEffect(() => {
+    setInterval(function () {
+      setShowTimer(currentValue => !currentValue)
+    }, 5000)
+  }, [])
+  
+ return  <div>
+   {showTimer && <Timer />}
   </div>
+}
 
-  const Timer = () => {
-    const [seconds, setSeconds] = useState(0)
 
-    useEffect(()=>{
-      setInterval(() => {
-        setSeconds(prev => prev +1);
-      }, 1000)
-    }, [])
+const Timer = () => {
+  const [seconds, setSeconds] = useState(0)
 
-    return <div>{seconds} seconds elapsed</div>
+  useEffect(()=>{
+    setInterval(() => {
+      setSeconds(prev => prev +1);
+    }, 1000)
+  }, [])
 
-  }
+  return <div>{seconds} seconds elapsed</div>
 
 }
+
 
 
 
