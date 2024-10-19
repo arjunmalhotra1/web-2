@@ -1,15 +1,15 @@
 
 
 import './App.css'
-import { usePostTile } from './hooks/useFetch'
+import { useFetch, usePostTile } from './hooks/useFetch'
 
 function App() {
   
-  const postTitle = usePostTile()
+  const {finalData} = useFetch("https://jsonplaceholder.typicode.com/posts/2")
 
   return (
     <div>
-       Title after hook in hooks folder: {postTitle}
+       useFetch: {JSON.stringify(finalData)}
     </div>
   )
 }
