@@ -21,3 +21,7 @@ const [post, setPost] = useState({})
 
   return post.title;
 }
+
+export function useFetch(url) {
+    
+}
