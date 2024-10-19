@@ -20,6 +20,7 @@ const [post, setPost] = useState({})
 
 export function useFetch(url) {
   const [finalData, setFinalData] = useState({})
+  console.log("url: ",url)
 
   async function getDetails() {
     const response = await fetch(url)
