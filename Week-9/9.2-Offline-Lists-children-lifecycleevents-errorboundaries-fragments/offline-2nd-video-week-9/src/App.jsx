@@ -8,10 +8,12 @@ function App() {
 
   return <div style={{display:'flex'}}>
     
-    <Card children={ <div style={{color: "green"} }>
-      What do you want to post?
-      <input type={"text"} />
-    </div>} />
+    <Card>
+      <div style={{color: "green"} }>
+        What do you want to post?
+        <input type={"text"} />
+      </div>
+    </Card>
     <Card children={ "hi There"} />
   </div>
 }
