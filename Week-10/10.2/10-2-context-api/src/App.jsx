@@ -2,6 +2,13 @@ import { useState, createContext, useContext } from 'react'
 
 import './App.css'
 
+/**
+1.. mobx
+2. recoil
+3. redux
+They reduce the re renders.
+ */
+
 
 // Context is created outside the component chain, usually in a separate file.
 const BulbContext = createContext()
