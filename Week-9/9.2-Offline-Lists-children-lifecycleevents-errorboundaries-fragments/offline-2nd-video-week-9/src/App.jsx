@@ -16,18 +16,18 @@ const Card = ({ children }) => {
 
   return <div style={{display:'flex'}}>
     
-    <Card innerContent={ <div style={{color: "green"} }>
+    <Card children={ <div style={{color: "green"} }>
       What do you want to post?
       <input type={"text"} />
     </div>} />
-    <Card innerContent={ "hi There"} />
+    <Card children={ "hi There"} />
   </div>
 }
 
-function Card({ innerContent }) {
-  return <span style={{background: "black", borderRadius: 10, color:"white", padding:10, margin: 10 }}>
-    {innerContent}
-  </span>
+function Card({ children }) {
+  return <div style={{background: "black", borderRadius: 10, color:"white", padding:10, margin: 10 }}>
+    {children}
+  </div>
 }
 
 export default App
