@@ -19,7 +19,11 @@ function useCounter() {
   }
 }
 
+// Component now becomes clean
 function App() {
+
+  const {count, increaseCount} = useCounter()
+
   return (
     <div>
         <button onclick={increaseCount}>Increase</button>
