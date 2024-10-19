@@ -15,10 +15,17 @@ function App() {
 
   const [inputVal, setInputval] = useState("")
 
+  const debouncedValue = useDebounce(inputVal)
 
-  function change(e) {
-    setInputval(e.target.value)
+
+  function change(eventVariable) {
+    setInputval(eventVariable.target.value) //eventVariable.target.value is the value in the input box
   }
+
+  useEffect(() => {
+    //expensive operation
+    //fetch
+  },[inputVal])
 
 
   return (
