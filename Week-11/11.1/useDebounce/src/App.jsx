@@ -3,8 +3,6 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function useDebounce(originalfn) {
-  const currentClock = useRef() // Because we don't want the component to change.
 
   const fn = () => {
     clearTimeout(currentClock.current)
@@ -14,15 +12,18 @@ function useDebounce(originalfn) {
 }
 
 function App() {
-  function sendDataToBackend() {
-    fetch("api.amazon.com/search")
+
+  const [inputVal, setInputval] = useState("")
+
+
+  function change(e) {
+    setInputval(e.target.value)
   }
 
-  const debouncedFn = useDebounce(sendDataToBackend)
 
   return (
     <>
-   <input type="text" onChange={debouncedFn}></input>
+   <input type="text" onChange={change}></input>
    </>
   )
 }
