@@ -21,13 +21,23 @@ function useCounter() {
 
 // Component now becomes clean
 function App() {
-  const {count, increaseCount} = useCounter()
 
   return (
     <div>
-        <button onclick={increaseCount}>Increase {count} </button>
+        <Counter />
+        <Counter />
+        <Counter />
     </div>
   )
+}
+
+
+function Counter() {
+  const {count, increaseCount} = useCounter()
+  return <div>
+        <button onclick={increaseCount}>Increase {count} </button>
+        <Counter />
+    </div>
 }
 
 export default App
