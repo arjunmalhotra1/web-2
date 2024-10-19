@@ -4,12 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
+  const [post, setPost] = useState({})
+
+
+
+// In react function to useEffect cannot be async hence we take that function out.
+  useEffect(async () => {
+    getPosts();
+  })
 
   return (
     <div>
-        <Counter />
-        <Counter />
-        <Counter />
+       hi there
     </div>
   )
 }
