@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     //expensive operation
     //fetch
-  },[inputVal])
+  },[debouncedValue]) // Do the expensive operation when the debouncedValue changes and not inputVal
 
 
   return (
