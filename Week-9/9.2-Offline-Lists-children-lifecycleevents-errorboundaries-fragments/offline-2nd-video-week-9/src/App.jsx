@@ -7,8 +7,12 @@ function App() {
   
 
   return <div style={{display:'flex'}}>
+    
+    <Card innerContent={ <div style={{color: "green"} }>
+      What do you want to post?
+      <input type={"text"} />
+    </div>} />
     <Card innerContent={ "hi There"} />
-    <Card innerContent={ <div style={{color: "green"}}>hello there</div>} />
   </div>
 }
 
