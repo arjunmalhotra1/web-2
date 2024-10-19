@@ -18,7 +18,7 @@ const Card = ({ children }) => {
     
     <Card>
       <div style={{color: "green"} }>
-        What do you want to post?
+        What do you want to post? <br/><br/>
         <input type={"text"} />
       </div>
     </Card>
