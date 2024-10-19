@@ -28,9 +28,10 @@ export function useFetch(url) {
     setFinalData(json)
   }
 
+  // If we don't give the url in the dependency array then getDetails is only called on the mount.
   useEffect(()=>{
     getDetails();
-  },[])
+  },[url])
 
   return {
     finalData
