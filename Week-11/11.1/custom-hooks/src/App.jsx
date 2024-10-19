@@ -6,9 +6,14 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  function increaseCount() {
+    setCount(count+1)
+    // Another way to do it setCount(c => c+1)
+  }
+
   return (
     <div>
-        hi There
+        <button onclick={increaseCount}>Increase</button>
     </div>
   )
 }
