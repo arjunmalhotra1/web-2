@@ -20,12 +20,15 @@ const [post, setPost] = useState({})
 
 export function useFetch(url) {
   const [finalData, setFinalData] = useState({})
-  console.log("url: ",url)
+  const [loading, setLoading] = useState(true)
+
 
   async function getDetails() {
+    setLoading(true)
     const response = await fetch(url)
     const json = await response.json();
     setFinalData(json)
+    setLoading(false)
   }
 
   // If we don't give the url in the dependency array then getDetails is only called on the mount.
@@ -33,7 +36,13 @@ export function useFetch(url) {
     getDetails();
   },[url])
 
+
+  useEffect(()=>{
+    setInterval(getDetails, 10*1000); //TODO: cleanup
+  },[])
+
   return {
-    finalData
+    finalData,
+    loading
   }
 }
