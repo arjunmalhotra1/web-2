@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useEffect } from 'react'
+import { memo } from 'react'
 
 /**
  * 
@@ -29,22 +30,15 @@ function Counter() {
 
 
   return <div>
-    <MemoizedCurrentCount />
+    <CurrentCount />
     <Increase />
     <Decrease />
   </div>
 }
 
-// const MemoizedCurrentCount = memo(CurrentCount)
 
-// function CurrentCount() {
-//     return <div>
-//       1
-//     </div>
-// }
 
-// Another way to do this
-const CurrentCount = memo(function () {
+const CurrentCount = (function () {
     return <div>
       1
     </div>
