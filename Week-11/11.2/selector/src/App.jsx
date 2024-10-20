@@ -1,68 +1,17 @@
 import { useState } from 'react'
 
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { useEffect } from 'react'
-import { memo } from 'react'
 
 
-
-function App() {
-  return (
-   <>
-   <Counter/>
-   </>
-  )
-}
-
-// From the global state of Atom crease various selectors.
-// In the top bar component don't subscribe to the Atom (whole) but only to the selector
-
-function Counter() {
-  
-  const [count,setCount] = useState(0)
-  useEffect(() => {
-    setInterval(()=> {
-      setCount(c=>c+1)
-    },1000)
-  },[])
-
-
-  return <div>
-    <CurrentCount />
-    <Increase />
-    <Decrease />
-  </div>
-}
-
-
-
-const CurrentCount = memo(function () {
-    return <div>
-      1
-    </div>
+export const counterAtom =atom({
+  default: 0,
+  key: "counter"
 })
 
-
-const Decrease = memo(function () {
-  function decrease() {
-  
+const even = selector ({
+  key: "isEvenSelector",
+  // default: 0 selector cannot have this since this s a derived state
+  get: function({get}) {
+    const currentcount = get(counterAtom);
   }
-  return <div>
-    <button onClick={decrease}>Decrease</button>
-  </div>
 })
-
-
-
-const Increase = memo(function() {
-  function increase() {
-
-  }
-  return <div>
-    <button onClick={increase}>Increase</button>
-  </div>
-})
-
-export default App
