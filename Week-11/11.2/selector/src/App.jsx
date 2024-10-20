@@ -16,6 +16,9 @@ function App() {
   )
 }
 
+// From the global state of Atom crease various selectors.
+// In the top bar component don't subscribe to the Atom (whole) but only to the selector
+
 function Counter() {
   
   const [count,setCount] = useState(0)
