@@ -49,6 +49,7 @@ function Decrease() {
 }
 
 
+// Decrease component is not subscribed to the value but subscribed to the setter
 function Increase() {
   const setCount = useSetRecoilState(counterAtom)
 
