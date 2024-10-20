@@ -12,6 +12,8 @@ const even = selector ({
   key: "isEvenSelector",
   // default: 0 selector cannot have this since this s a derived state
   get: function({get}) {
-    const currentcount = get(counterAtom);
+    const currentCount = get(counterAtom);
+    const isEven = (currentCount %2==0)
+    return isEven
   }
 })
