@@ -7,8 +7,6 @@ import './App.css'
 
 
 function App() {
-  
-
   return (
    <>
    <Counter/>
@@ -17,13 +15,20 @@ function App() {
 }
 
 
+// Here when count changes the Increase, DEcrease and CurrentCount component all re-render.
 function Counter() {
   const [count,setCount] = useState(0)
   return <div>
-    {count}
+    <CurrentCount count={count} />
     <Increase setCount={setCount}/>
     <Decrease setCount={setCount}/>
   </div>
+}
+
+function CurrentCount({count}) {
+    return <div>
+      {count}
+    </div>
 }
 
 function Decrease({setCount}) {
@@ -33,19 +38,19 @@ function Decrease({setCount}) {
   }
 
   return <div>
-    <button onclick={decrease}>Decrease</button>
+    <button onClick={decrease}>Decrease</button>
   </div>
 }
 
 
-function Increase(setCount) {
+function Increase({setCount}) {
 
   function increase() {
     setCount(c => c+1)
   }
 
   return <div>
-    <button onclick={increase}>Increase</button>
+    <button onClick={increase}>Increase</button>
   </div>
 }
 
