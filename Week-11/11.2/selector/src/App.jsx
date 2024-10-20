@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import {atom} from recoil
+import {atom, RecoilRoot, selector, useRecoilValue, useSetRecoilState} from 'recoil'
 
 import './App.css'
 
@@ -36,9 +36,17 @@ function Buttons() {
 
   const setCount = useSetRecoilState(counterAtom)
 
+  function increase() {
+    setCount(c => c+2)
+  }
+
+  function decrease() {
+    setCount(c => c-1)
+  }
+
   return <div>
     <button onClick={increase}>Increase</button>
-    <button onClick={deccrease}>Decrease</button>
+    <button onClick={decrease}>Decrease</button>
   </div>
 }
 
