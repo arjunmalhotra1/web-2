@@ -35,7 +35,7 @@ function Counter() {
 
 
 
-const CurrentCount = (function () {
+const CurrentCount = memo(function () {
     return <div>
       1
     </div>
