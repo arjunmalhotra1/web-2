@@ -58,7 +58,9 @@ function Counter() {
 }
 
 function IsEven() {
+  console.log("inside IsEven")
   const even = useRecoilValue(evenSelector)
+  console.log("even: ",even)
     return <div>
       {even ? "Even":"Odd"}
     </div>
