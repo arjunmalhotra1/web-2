@@ -5,7 +5,10 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { useEffect } from 'react'
 
-
+/**
+ * 
+ * memo let's you reduce re-renders with useState and without the Atom
+ */
 
 function App() {
   return (
@@ -21,47 +24,51 @@ function Counter() {
   useEffect(() => {
     setInterval(()=> {
       setCount(c=>c+1)
-    })
+    },1000)
   },[])
 
 
   return <div>
-    <CurrentCount />
+    <MemoizedCurrentCount />
     <Increase />
     <Decrease />
   </div>
 }
 
-function CurrentCount() {
+// const MemoizedCurrentCount = memo(CurrentCount)
+
+// function CurrentCount() {
+//     return <div>
+//       1
+//     </div>
+// }
+
+// Another way to do this
+const CurrentCount = memo(function () {
     return <div>
       1
     </div>
-}
+})
 
 
-function Decrease() {
-
+const Decrease = memo(function () {
   function decrease() {
   
   }
-
   return <div>
     <button onClick={decrease}>Decrease</button>
   </div>
-}
+})
 
 
 
-function Increase() {
-
-
+const Increase = memo(function() {
   function increase() {
 
   }
-
   return <div>
     <button onClick={increase}>Increase</button>
   </div>
-}
+})
 
 export default App
