@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import {atom} from recoil
+
 import './App.css'
 
 
@@ -21,10 +23,11 @@ const evenSelector = selector ({
 
 function App() {
   return <div>
-    
-    <Buttons/>
-    <Counter />
-    <IsEven />
+    <RecoilRoot>
+      <Buttons/>
+      <Counter />
+      <IsEven />
+    </RecoilRoot>
   </div>
 }
 
