@@ -3,6 +3,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { counterAtom } from './store/atoms/counter'
 
 
 
@@ -28,7 +29,9 @@ function Counter() {
   </div>
 }
 
+// currentCount component has now subscribed to the counterAtom
 function CurrentCount() {
+  const count = useRecoilValue(counterAtom)
     return <div>
       {count}
     </div>
