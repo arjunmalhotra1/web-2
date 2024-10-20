@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -21,19 +22,19 @@ function App() {
 function Counter() {
   const [count,setCount] = useState(0)
   return <div>
-    <CurrentCount count={count} />
-    <Increase setCount={setCount}/>
-    <Decrease setCount={setCount}/>
+    <CurrentCount />
+    <Increase />
+    <Decrease />
   </div>
 }
 
-function CurrentCount({count}) {
+function CurrentCount() {
     return <div>
       {count}
     </div>
 }
 
-function Decrease({setCount}) {
+function Decrease() {
 
   function decrease() {
     setCount(c => c-1)
@@ -45,7 +46,7 @@ function Decrease({setCount}) {
 }
 
 
-function Increase({setCount}) {
+function Increase() {
 
   function increase() {
     setCount(c => c+1)
