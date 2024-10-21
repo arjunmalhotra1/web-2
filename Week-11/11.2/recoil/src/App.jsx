@@ -17,7 +17,7 @@ function App() {
 }
 
 
-// Here when count changes the Increase, DEcrease and CurrentCount component all re-render.
+
 function Counter() {
   const [count,setCount] = useState(0)
   return <div>
