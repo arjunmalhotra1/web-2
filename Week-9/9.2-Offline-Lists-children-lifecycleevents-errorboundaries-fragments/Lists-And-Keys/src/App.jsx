@@ -16,6 +16,7 @@ function App() {
         // We are rendering a list we need to pass in a "key" as an input and it should uniquely identify 
         // that specific TODO.
         // On Linkedin the key could be "Post-1", "Post-2" etc.
+        // Say the order of TODOs changes then React would not know if the keys are not given.
         <Todo key={"asdkhdka"} title={"Go to gym"} done={false}/>,
         <Todo key={1} title={"eat food"} done={false}/>
       ]}
