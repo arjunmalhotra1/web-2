@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -20,8 +20,18 @@ function App() {
 
 
 function Counter() {
+  // If we have these lines of code then as described in the snapshot, 
+  // when a component re-renders then all it's children re render as well.
   // const [count,setCount] = useState(0)
+  // useEffect(() => {
+  //   setInterval(()=> {
+  //     setCount(c=>c+1)
+  //   },1000)
+  // },[])
+
+
   return <div>
+
     <CurrentCount />
     <Increase />
     <Decrease />
