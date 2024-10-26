@@ -11,7 +11,11 @@ function App() {
   return (
     <div>
       {[
-        // When we add keys the error s goes away
+        // When we add keys the error goes away
+        // Even though we are not using the key attribute, but still when we are using React and when 
+        // We are rendering a list we need to pass in a "key" as an input and it should uniquely identify 
+        // that specific TODO.
+        // On Linkedin the key could be "Post-1", "Post-2" etc.
         <Todo key={"asdkhdka"} title={"Go to gym"} done={false}/>,
         <Todo key={1} title={"eat food"} done={false}/>
       ]}
