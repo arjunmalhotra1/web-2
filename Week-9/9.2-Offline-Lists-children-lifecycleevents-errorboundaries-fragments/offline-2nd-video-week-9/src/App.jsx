@@ -6,8 +6,15 @@ import './App.css'
 function App() {
   
 
-  return <div>
-    <Card innerContent={ "hi There"} />
+  return <div style={{display:'flex'}}>
+    {/* This is a better way to pass the children */}
+    <Card>
+      <div style={{color: "green"} }>
+        What do you want to post? <br/><br/>
+        <input type={"text"} />
+      </div>
+    </Card>
+    <Card children={ "hi There"} />
   </div>
 }
 
