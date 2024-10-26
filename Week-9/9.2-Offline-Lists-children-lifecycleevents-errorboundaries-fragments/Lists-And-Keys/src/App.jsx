@@ -12,11 +12,18 @@ function App() {
     done: true
   }]
 
+  // Here we concert array of Todos to an array of components. & we render them.
   const todosComponent = todos.map(todo => <Todo title={todo.title} done={todo.done} />)
 
   return (
     <div>
-      {todosComponent}
+      {/* {todosComponent} */}
+      
+      {/* What actuaually happens is this:
+      {[
+        <Todo/>,
+        <Todo/>
+      ]} */}
     </div>
   )
 }
