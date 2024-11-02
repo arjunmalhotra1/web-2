@@ -4,15 +4,14 @@ function App() {
 
   return (
     <>
-      {/* <div style={{display:"flex", justifyContent:"space-between"} }> */}
-      <div className='flex justify-between'> 
-        <div>
+      <div className='grid grid-cols-12'> 
+        <div className='bg-green-300 col-span-4'>
         child 1
         </div>
-        <div>
+        <div className='bg-red-300 col-span-6'>
         child 2
         </div>
-        <div>
+        <div className='bg-green-300 col-span-2'>
         child 3
         </div>
       </div>
