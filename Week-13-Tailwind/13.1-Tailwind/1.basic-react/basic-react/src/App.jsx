@@ -5,7 +5,7 @@ function App() {
   return (
     <>
      <div className='grid grid-cols-12'>
-        <div className='col-span-12 sm:col-span-5 bg-red-500'>
+        <div className='col-span-12 sm:col-span-5 bg-red-500 text-8xl'>
           hi
         </div>
         <div className='col-span-12 sm:col-span-5 bg-green-300'>
