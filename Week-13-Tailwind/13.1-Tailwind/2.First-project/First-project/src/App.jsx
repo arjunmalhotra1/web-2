@@ -1,5 +1,7 @@
 
 import './App.css'
+import { Button } from './components/Buttons'
+
 
 export default function App() {
   return (
