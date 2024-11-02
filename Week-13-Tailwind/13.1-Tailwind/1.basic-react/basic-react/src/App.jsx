@@ -4,7 +4,8 @@ function App() {
 
   return (
     <>
-      <div style={{display:"flex"}}>
+      {/* <div style={{display:"flex", justifyContent:"space-between"} }> */}
+      <div className='flex justify-between'> 
         <div>
         child 1
         </div>
