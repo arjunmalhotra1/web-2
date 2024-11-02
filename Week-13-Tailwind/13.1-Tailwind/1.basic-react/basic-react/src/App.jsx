@@ -4,17 +4,14 @@ function App() {
 
   return (
     <>
-      <div className='grid grid-cols-12'> 
-        <div className='bg-green-300 col-span-4'>
-        child 1
-        </div>
-        <div className='bg-red-300 col-span-6'>
-        child 2
-        </div>
-        <div className='bg-green-300 col-span-2'>
-        child 3
-        </div>
-      </div>
+     {/* It looks like when the sm break point has been hit then render blue else red. But opposite happens
+        When the screen is big then we see blue else we see red Why?
+        Because Tailwind is mobile design.
+        sm:bg-blue-300 is a prefix utility. Unprefix utilities take effect at all screen sizes and prefix one take place/appear at the break point and above.
+       */}
+     <div className='sm:bg-blue-300 bg-red-300'>
+      hi there
+     </div>
     </>
   )
 }
