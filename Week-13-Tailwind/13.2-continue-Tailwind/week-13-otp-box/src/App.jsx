@@ -9,6 +9,7 @@ function App() {
   const [darkMode, setDarkMode ] = useState(true)
 
   return (
+    // If the machine is in Dark mode then this will be dark else light.
     <div className="h-screen bg-white dark:bg-blue-800 text-black dark:text-white">
       {/* <SidebarClass1 />
       <Sidebar2Transition /> */}
