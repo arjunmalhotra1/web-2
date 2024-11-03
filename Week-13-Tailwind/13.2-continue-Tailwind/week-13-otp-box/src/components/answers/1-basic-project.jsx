@@ -1,3 +1,4 @@
+// Adding the 2 comments
 // sm, md, lg, xl, 2xl
 // hidden md:block - This means default is hidden but beyond "md:block" it is visible.
 
