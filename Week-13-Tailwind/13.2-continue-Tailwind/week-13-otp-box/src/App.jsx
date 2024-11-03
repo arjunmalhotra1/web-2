@@ -9,14 +9,9 @@ function App() {
   const [darkMode, setDarkMode ] = useState(true)
 
   return (
-    // If the machine is in Dark mode then this will be dark else light.
-    <div className="h-screen bg-white dark:bg-blue-800 text-black dark:text-white">
-      {/* <SidebarClass1 />
-      <Sidebar2Transition /> */}
-
-      <button onClick={() => document.querySelector("html").classList.toggle("dark")}>Toggle theme </button>
-
-
+    // by default background color is white but in dark mode it's black
+    <div className='h-screen bg-white dark:bg-black'>
+      <h1 className='text-black dark:text-white'>Hi There</h1>
     </div>
   )
 }
