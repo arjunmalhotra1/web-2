@@ -14,7 +14,7 @@ function App() {
       {/* <SidebarClass1 />
       <Sidebar2Transition /> */}
 
-      <button onClick={() => document.querySelector("html").classList.toggle("dark",Math.random() > 0.5?true:false)}>Toggle theme </button>
+      <button onClick={() => document.querySelector("html").classList.toggle("dark",document.querySelector("html").classList[0]=="dark"?false:true)}>Toggle theme </button>
 
 
     </div>
