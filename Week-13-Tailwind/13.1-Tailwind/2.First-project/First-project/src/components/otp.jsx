@@ -1,6 +1,6 @@
 export function Otp() {
-
     
+
     return <div>
         <SubOtpBox/>
         <SubOtpBox/>
