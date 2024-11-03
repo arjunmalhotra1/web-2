@@ -14,7 +14,7 @@ function App() {
       {/* <SidebarClass1 />
       <Sidebar2Transition /> */}
 
-      <button onClick={() => setDarkMode(!darkMode)}>Toggle theme</button>
+      <button onClick={() => console.log(document.querySelector("html").classList)}>Toggle theme </button>
 
 
     </div>
