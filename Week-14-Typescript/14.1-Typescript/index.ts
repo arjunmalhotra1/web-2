@@ -1,8 +1,16 @@
-function greet(firstName:string) {
-    console.log("Hello "+firstName)
+// function greet(firstName:string) {
+//     console.log("Hello "+firstName)
+// }
+
+// greet("firstName")
+
+
+function sum(a:number,b :number) {
+    return a+b
 }
 
-greet("firstName")
+let ans=sum(1,2)
+console.log(ans)
 
 // let x:any =1;
 // x=true
