@@ -33,3 +33,13 @@ function delayCall(anotherFn: ()=>void) {
 delayCall(function() {
     console.log("hello")
 })
+
+function delayCall2(anotherFn: (a:string)=>void) {
+    setTimeout(()=>{anotherFn("John")}, 1000)
+}
+
+function greet(name: string) {
+    console.log("Hello: "+name)
+}
+
+delayCall2(greet)
