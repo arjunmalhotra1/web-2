@@ -9,13 +9,10 @@ function App() {
   const [darkMode, setDarkMode ] = useState(true)
 
   return (
-    // by default background color is white but in dark mode it's black
-    <div className='h-screen bg-white dark:bg-black'>
-      <h1 className='text-black dark:text-white'>Hi There</h1>
-      <button onClick={()=>{
-        document.querySelector("html").classList.toggle("dark")
-      }}>Toggle theme</button>
-    </div>
+   <div>
+    
+
+   </div>
   )
 }
 
