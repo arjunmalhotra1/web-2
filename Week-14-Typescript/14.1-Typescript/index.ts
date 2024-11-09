@@ -16,3 +16,11 @@ console.log(ans)
 // x=true
 // x="firstName"
 // x="random"
+
+function sum2(a:number,b :number):number {
+    return a+b
+}
+
+let ans2=sum2(1,2)
+let ans3:number=sum2(1,2)
+console.log(ans)
