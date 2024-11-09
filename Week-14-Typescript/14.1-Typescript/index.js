@@ -26,9 +26,13 @@ delayCall(function () {
     console.log("hello");
 });
 function delayCall2(anotherFn) {
-    setTimeout(() => { anotherFn("John"); }, 1000);
+    setTimeout(function () { anotherFn("John"); }, 1000);
 }
 function greet(name) {
     console.log("Hello: " + name);
 }
 delayCall2(greet);
+// In 2020Ecma we did have an arrow function when we change target to "ES5" then the 
+var greet3 = function () {
+    console.log("hi there");
+};

@@ -43,3 +43,15 @@ function greet(name: string) {
 }
 
 delayCall2(greet)
+
+
+
+// In 2020Ecma we did have an arrow function when we change target to "ES5" then the 
+// the arrow function changes to 
+// var greet3 = function () {
+//     console.log("hi there");
+// };
+// in the index.js
+let greet3 = () => {
+    console.log("hi there")
+}
