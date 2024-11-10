@@ -4,11 +4,21 @@
 interface User {
     name: string;
     age: number;
-    address?:{
+    address:{
         city: string;
         country: string;
         pincode: number;
     };
+}
+
+// We do not want "office address to be repeated"
+interface Office {
+    address: {
+        city: string;
+        country: string;
+        pincode: number;
+        houseNumber: string
+    }
 }
 
 
@@ -23,13 +33,10 @@ let user:User = {
     }
 }
 
-// Only pincode by itself is not optional. If we want partial fields optional then define "?" for all the fields individually.
+
 let user2:User = {
     name: "rama",
     age :22,
-    address:{
-        pincode:123123
-    }
 }
 
 
