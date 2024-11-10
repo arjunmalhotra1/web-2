@@ -4,7 +4,7 @@
 interface User {
     name: string;
     age: number;
-    address: undefined |{
+    address?:{
         city: string;
         country: string;
         pincode: number;
@@ -27,8 +27,6 @@ let user:User = {
 let user2:User = {
     name: "rama",
     age :22,
-    address:undefined
-    
 }
 
 
