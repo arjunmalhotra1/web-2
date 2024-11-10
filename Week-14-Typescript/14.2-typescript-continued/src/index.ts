@@ -4,7 +4,7 @@
 interface User {
     name: string;
     age: number;
-    address: {
+    address: undefined |{
         city: string;
         country: string;
         pincode: number;
@@ -23,10 +23,11 @@ let user:User = {
     }
 }
 
-// How to make address an optional field?
+
 let user2:User = {
     name: "rama",
     age :22,
+    address:undefined
     
 }
 
