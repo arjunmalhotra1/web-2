@@ -23,10 +23,13 @@ let user:User = {
     }
 }
 
-
+// Only pincode by itself is not optional. If we want partial fields optional then define "?" for all the fields individually.
 let user2:User = {
     name: "rama",
     age :22,
+    address:{
+        pincode:123123
+    }
 }
 
 
