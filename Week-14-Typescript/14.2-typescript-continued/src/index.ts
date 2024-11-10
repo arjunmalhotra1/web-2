@@ -9,7 +9,7 @@ let person: people = {
     name:"har",
     age:21,
     greet:() => {
-        return "hi har"
+        return "hi" + this.name;
     }
 }
 
