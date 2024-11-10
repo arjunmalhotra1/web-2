@@ -32,10 +32,10 @@ let user:User = {
 }
 
 
-let user2:User = {
-    name: "rama",
-    age :22,
-}
+// let user2:User = {
+//     name: "rama",
+//     age :22,
+// }
 
 
 function isLegalToVote(user: User): boolean {
