@@ -1,24 +1,22 @@
 // Interfaces and types
 
+interface Address {
+    city: string;
+    country: string;
+    pincode: number;
+
+}
 
 interface User {
     name: string;
     age: number;
-    address:{
-        city: string;
-        country: string;
-        pincode: number;
-    };
+    address: Address
+   
 }
 
 // We do not want "office address to be repeated"
 interface Office {
-    address: {
-        city: string;
-        country: string;
-        pincode: number;
-        houseNumber: string
-    }
+    address: Address
 }
 
 
