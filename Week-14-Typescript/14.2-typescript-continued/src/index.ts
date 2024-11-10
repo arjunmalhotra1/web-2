@@ -12,16 +12,19 @@ interface User {
 }
 
 
-// When we define a custom type & we don't give pincode, then we get a compile time error.
+
 let user:User = {
     name: "harkirat",
     age :21,
     address: {
         city: "Chandigarh",
-        country: "India"
+        country: "India",
+        pincode: 1506994
     }
 }
 
-// function isLegalToVote(): boolean {
+function isLegalToVote(user: User): boolean {
+    return user.age >= 18;
+}
 
-// }
+console.log(isLegalToVote(user))
