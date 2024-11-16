@@ -7,7 +7,7 @@ import { UserModel } from "./db";
 
 const app = express();
 
-app.post("/api/v1/signup", (req, res) => {
+app.post("/api/v1/signup", async (req, res) => {
     // zod validation & Hashpassword
     const username = req.body.username
     const password = req.body.password
