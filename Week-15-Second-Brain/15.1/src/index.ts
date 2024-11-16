@@ -3,10 +3,23 @@ import express from "express"
 import mongoose from "mongoose"
 
 import jwt from "jsonwebtoken"
+import { UserModel } from "./db";
 
 const app = express();
 
 app.post("/api/v1/signup", (req, res) => {
+    // zod validation & Hashpassword
+    const username = req.body.username
+    const password = req.body.password
+
+    await UserModel.create({
+        username:username,
+        password:password
+    })
+
+    res.json({
+        message: "User signed up"
+    })
 
 })
 
