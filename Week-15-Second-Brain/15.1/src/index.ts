@@ -12,6 +12,7 @@ app.post("/api/v1/signup", async (req, res) => {
     const username = req.body.username
     const password = req.body.password
 
+    try {}
     await UserModel.create({
         username:username,
         password:password
@@ -20,6 +21,11 @@ app.post("/api/v1/signup", async (req, res) => {
     res.json({
         message: "User signed up"
     })
+} catch(e) {
+    res.status(411).json() {
+        message: "User already exists"
+    }
+}
 
 })
 
@@ -46,3 +52,5 @@ app.post("/api/v1/brain/share", (req, res) => {
 app.get("/api/v1/brain/:shareLink", (req, res) => {
 
 })
+
+app.listen(8765)
