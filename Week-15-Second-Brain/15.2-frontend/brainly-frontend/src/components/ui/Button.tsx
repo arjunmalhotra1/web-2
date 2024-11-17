@@ -7,15 +7,19 @@
     onClick: () => void
 }
 
+type Variants = "primary" | "secondary"
+
 const variantStyles = {
-    "default":"bg-purple-600 text-white",
-    "default":"bg-purple-600 text-white"
+    "primary":"bg-purple-600 text-white",
+    "secondary":"bg-purple-400 text-purple-600"
 }
+
+const defaultStyles = "rounded-md pd-4"
 
 
 export const Button = (props: ButtonProps) => {
   
-    return <button></button>
+    return <button className={""+defaultStrules + size}></button>
 }
 
 <Button variant="primary" size="md" onClick={() =>{}} text={"asd"}/>
