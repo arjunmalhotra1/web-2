@@ -1,4 +1,4 @@
-export interface buttonProps {
+export interface ButtonProps {
     variant:"primary" | "secondary",
     size: "sm" | "md" | "lg"
     text: string,
@@ -9,7 +9,9 @@ export interface buttonProps {
 
 
 
-export const Button = () => {
+export const Button = (props) => {
+    // props.variant
+    //props.size
     return <button></button>
 }
 
