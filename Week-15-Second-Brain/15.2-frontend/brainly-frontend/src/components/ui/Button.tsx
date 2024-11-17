@@ -14,4 +14,4 @@ export const Button = (props: ButtonProps) => {
     return <button></button>
 }
 
-<Button variant="primary" size="md" onClick={} text{}/>
+<Button startIcon={"+"} endIcon={"+"}variant="primary" size="md" onClick={() =>{}} text={"asd"}/>
