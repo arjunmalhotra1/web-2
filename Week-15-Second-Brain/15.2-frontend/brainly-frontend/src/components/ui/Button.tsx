@@ -9,9 +9,8 @@ export interface ButtonProps {
 
 
 
-export const Button = (props) => {
-    // props.variant
-    //props.size
+export const Button = (props: ButtonProps) => {
+  
     return <button></button>
 }
 
