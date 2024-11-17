@@ -7,6 +7,10 @@
     onClick: () => void
 }
 
+const variantStyles = {
+    "default":"bg-purple-600 text-white",
+    "default":"bg-purple-600 text-white"
+}
 
 
 export const Button = (props: ButtonProps) => {
