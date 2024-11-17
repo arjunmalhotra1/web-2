@@ -19,7 +19,7 @@ const defaultStyles = "rounded-md pd-4"
 
 export const Button = (props: ButtonProps) => {
   
-    return <button className={""+defaultStrules + size}></button>
+    return <button className={variantStyles[props.variant]}></button>
 }
 
 <Button variant="primary" size="md" onClick={() =>{}} text={"asd"}/>
