@@ -10,7 +10,25 @@ function App() {
   }
 
   useEffect(() =>{
+    // This is how we did it with http request using Fetch
+    // fetch("http://localhost:3000/users")
+    const ws = new WebSocket("ws://localhost:8798")
 
+    ws.onmessage = () => {
+      
+    }
+
+    ws.onerror = () => {
+
+    }
+
+    ws.onclose = () => {
+      
+    }
+
+    ws.onopen = () => {
+      
+    }
   },[])
 
   return (
