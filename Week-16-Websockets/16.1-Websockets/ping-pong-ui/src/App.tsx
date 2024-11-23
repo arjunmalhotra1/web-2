@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 // We want to connect to the web socket server when the App mounts
@@ -15,6 +15,8 @@ function App() {
     if (!socket) {
       return 
     }
+
+    //const message = inputRef.current.value
 
     // @ts-ignore
     socket.send("ping")
@@ -46,7 +48,7 @@ function App() {
 
   return (
     <div>
-      <input type='text' placeholder='Message...'></input>
+      <input ref={inputRef} type='text' placeholder='Message...'></input>
       <button onClick={sendMessage}>Send</button>
     </div>
   )
