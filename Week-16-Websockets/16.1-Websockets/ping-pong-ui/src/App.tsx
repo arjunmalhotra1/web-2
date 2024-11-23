@@ -6,6 +6,7 @@ import './App.css'
 function App() {
 
   const [socket, setSocket] = useState()
+  const inputRef = useRef();
 
 
   // question how ill ws reach here? Answer we create a state.
@@ -15,6 +16,7 @@ function App() {
       return 
     }
 
+    // @ts-ignore
     socket.send("ping")
 
   }
