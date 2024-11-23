@@ -1,13 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect } from 'react'
 import './App.css'
 
+// We want to connect to the web socket server when the App mounts
+// Not on every render.
 function App() {
 
   function sendMessage() {
-    
+
   }
+
+  useEffect(() =>{
+
+  },[])
 
   return (
     <div>
