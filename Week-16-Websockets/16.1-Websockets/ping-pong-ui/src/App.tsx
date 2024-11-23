@@ -1,11 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 // We want to connect to the web socket server when the App mounts
 // Not on every render.
 function App() {
 
+  const [socket, setSocket] = useState()
+
+
+  // question how ill ws reach here? Answer we create a state.
   function sendMessage() {
+
+    if (!socket) {
+      return 
+    }
+
+    socket.send("ping")
 
   }
 
@@ -14,8 +24,9 @@ function App() {
     // fetch("http://localhost:3000/users")
     const ws = new WebSocket("ws://localhost:8798")
 
-    ws.onmessage = () => {
-      
+    // This is how we receive a message
+    ws.onmessage = (ev) => {
+      alert(ev.data)
     }
 
     ws.onerror = () => {
