@@ -17,7 +17,7 @@ wss.on("connection",function(socket){
     },500)
 
     socket.on("message",(e)=>{
-        console.log(e)
+        console.log(e.toString())
     })
     
 })
