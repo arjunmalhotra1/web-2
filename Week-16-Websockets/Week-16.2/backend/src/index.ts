@@ -24,6 +24,16 @@ wss.on("connection",(socket)=>{
         }
 
         if (parsedMesssage.type === "chat") {
+
+            // This is one way
+            // const currentUSerRoom = allSockets.find((x)=>x.socket===socket)?.room
+            let currentUSerRoom = null;
+
+            for (let i=0;i<allSockets.length;i++){
+                if (allSockets[i].socket === socket) {
+                    currentUSerRoom = allSockets[i].room
+                }
+            }
             
         }
     })
