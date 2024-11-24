@@ -9,23 +9,10 @@ interface User {
 
 let allSockets: User[] = []
 
-// wss.on("/join") - This is not possible in web sockets
 wss.on("connection",(socket)=>{
 
     socket.on("message",(message)=>{
-        //{"type"} we get a string and then we convert it into an object
-
-        const parsedMessage = JSON.parse(message)
-        if (parsedMessage.type === "join") {
-            allSockets.push({
-                socket,
-                room:parsedMessage.payload.roomId
-            })
-        }
-        
+        const parsedMesssage = JSON.parse(message as unknown as string)
     })
 
-    socket.on("disconnect",()=> {
-        allSockets = allSockets.filter(x => x!=socket)
-    })
 })
