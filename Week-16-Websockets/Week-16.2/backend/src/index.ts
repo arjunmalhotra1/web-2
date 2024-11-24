@@ -16,6 +16,10 @@ wss.on("connection",(socket)=>{
         const parsedMesssage = JSON.parse(message)
 
         if (parsedMesssage.type === "join") {
+            allSockets.push({
+                socket,
+                room:parsedMesssage.payload.roomId
+            })
 
         }
 
