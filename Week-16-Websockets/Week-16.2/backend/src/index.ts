@@ -10,5 +10,7 @@ wss.on("connection",(socket)=>{
 
     socket.on("message",(message)=>{
         console.log("message received "+message.toString())
+        //setTimeout(())
+        socket.send(message.toString() + ": sent from server")
     })
 })
