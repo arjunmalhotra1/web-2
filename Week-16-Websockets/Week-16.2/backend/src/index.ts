@@ -1,9 +1,9 @@
-import { WebSocketServer } from "ws";
+import { WebSocketServer,WebSocket } from "ws";
 
 const wss = new WebSocketServer({port: 8798})
 
 let userCount = 0
-let allSockets = []
+let allSockets:WebSocket[] = []
 
 wss.on("connection",(socket)=>{
     allSockets.push(socket)
@@ -15,7 +15,7 @@ wss.on("connection",(socket)=>{
         console.log("message received "+message.toString())
         for (let i=0;i<allSockets.length;i++) {
             const s = allSockets[i]
-            socket.send(message.toString() + ": sent from server")    
+            s.send(message.toString() + ": sent from server")    
         }
         
     })
