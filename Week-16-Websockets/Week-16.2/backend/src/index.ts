@@ -25,13 +25,19 @@ wss.on("connection",(socket)=>{
 
         if (parsedMesssage.type === "chat") {
 
-            // This is one way
-            // const currentUSerRoom = allSockets.find((x)=>x.socket===socket)?.room
+            // We find current user's room
             let currentUSerRoom = null;
 
             for (let i=0;i<allSockets.length;i++){
                 if (allSockets[i].socket === socket) {
                     currentUSerRoom = allSockets[i].room
+                }
+            }
+
+            // Then send the message to all the users in that room
+            for (let i=0;i<allSockets.length;i++){
+                if (allSockets[i].room == currentUSerRoom) {
+                    allSockets[i].socket.send(parsedMesssage.payload.message)
                 }
             }
             
