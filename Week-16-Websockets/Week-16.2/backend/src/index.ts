@@ -7,15 +7,16 @@ let allSockets = []
 
 wss.on("connection",(socket)=>{
     allSockets.push(socket)
-    
+
     userCount = userCount+1
     console.log("user connected #"+userCount)
 
     socket.on("message",(message)=>{
         console.log("message received "+message.toString())
-        setTimeout(()=>{
+        for (let i=0;i<allSockets.length;i++) {
+            const s = allSockets[i]
             socket.send(message.toString() + ": sent from server")    
-        },1000)
+        }
         
     })
 })
