@@ -4,13 +4,17 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const ws = new WebSocket("http:localhost:3000")
+
+  // This is how we send an http request
+  // fetch("http:localhost:3000")
 
   return (
     <div className='h-screen bg-black'>
-      <div className='h-[95vh] bg-red-300' ></div>
-      <div className=''>
-        <input type='text w-full p-4'></input>
+      <div className='h-[95vh]' ></div>
+      <div className='w-full bg-white flex'>
+        <input className='flex-1 p-4'></input>
+        <button className='bg-purple-600 text-white p-4'>Send Message</button>
       </div>
     </div>
   )
