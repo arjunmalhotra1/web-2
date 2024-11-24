@@ -13,6 +13,7 @@ let allSockets: User[] = []
 wss.on("connection",(socket)=>{
 
     socket.on("message",(message)=>{
+        //{"type"} we get a string and then we convert it into an object
         
     })
 
