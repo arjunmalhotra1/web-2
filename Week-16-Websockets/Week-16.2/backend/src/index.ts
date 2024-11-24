@@ -12,7 +12,16 @@ let allSockets: User[] = []
 wss.on("connection",(socket)=>{
 
     socket.on("message",(message)=>{
-        const parsedMesssage = JSON.parse(message as unknown as string)
+        // @ts-ignore
+        const parsedMesssage = JSON.parse(message)
+
+        if (parsedMesssage.type === "join") {
+
+        }
+
+        if (parsedMesssage.type === "chat") {
+            
+        }
     })
 
 })
