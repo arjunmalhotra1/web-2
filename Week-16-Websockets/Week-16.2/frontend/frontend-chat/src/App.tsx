@@ -1,18 +1,20 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 function App() {
   
   const [messages, setMessages] = useState([])
+  const wsRef = useRef()
 
-  useEffect(() => {
-    const ws = new WebSocket("http:localhost:3000")
-    ws.onmessage = (event)=> {
-      setMessages(m => [...m, event.data])
-    }  
-  },[])
+    useEffect(()=>{
+      const ws = new WebSocket("http:localhost:3000");
+      ws.onmessage = (event) => {
+        setMessages(m => [...m, event.data])
+      }
+
+      wsRef.current = ws
+    },[])
+    
 
   return (
     <div className='h-screen bg-black'>
