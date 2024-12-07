@@ -13,9 +13,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// We only add our changes to this the ".prisma" file.
 model User {
   id Int @default(autoincrement()) @id
   username String @unique
   password String
   age Int
+  city String
 }
