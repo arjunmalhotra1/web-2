@@ -20,6 +20,8 @@ model User {
   password String
   age Int
   city String
+  // Every user has a bunch of Todos
+  todos Todo[]
 }
 
 model Todo {
@@ -28,9 +30,5 @@ model Todo {
   description String
   done Boolean
   userId Int
-
-// Either make it optional r we can give it a default value.
-  // time DateTime?
-// Add default values to the previous rows added.
-  // time2 DateTime @default(now())
+  user User @relation(fields: [userId], references: [id])
 }
