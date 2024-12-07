@@ -28,6 +28,15 @@ Output:
   username: 'username',
   password: 'password',
   age: 42,
-  city: 'city'
+  city: 'city',
+  todos: [
+    {
+      id: 1,
+      title: 'gym',
+      description: 'go to gym',
+      done: false,
+      userId: 1
+    }
+  ]
 }
 */
