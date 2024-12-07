@@ -5,15 +5,26 @@ const client = new PrismaClient()
 
 
 async function createUser() {
-    await client.user.create({
-        data: {
-            username:"username",
-            password: "password",
-            age: 42,
-            city: "city"
-        }
+    const user = await client.user.findFirst({
+        where: {
+            id:1
+        },
     })    
+
+    console.log(user)
 }
 
 createUser()
 
+
+/*
+Output:
+
+{
+  id: 1,
+  username: 'username',
+  password: 'password',
+  age: 42,
+  city: 'city'
+}
+*/
