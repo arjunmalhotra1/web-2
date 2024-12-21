@@ -1,5 +1,6 @@
-export default function() {
+export default function({params}: any) {
+    const postId = params.postId
     return <div>
-        Blog Page
+        Blog Page {postId}
     </div>
 }
