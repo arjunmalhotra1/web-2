@@ -9,6 +9,7 @@ export default async function({params}: any) {
     //     <br></br>
     //     title - {data.title}
     //     body - {data.body}
+    // [...] – Catch-All Segment
     return <div>
         Blog Page {JSON.stringify(postId)}
     </div>
