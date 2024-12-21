@@ -28,10 +28,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <div>Root Layout start</div>
+        {/* <div>Root Layout start</div> */}
         {/* {route == "signin"} ?<div> header </div> this is an ugly way to do this*/}
         {children}
-        <div>Root Layout end</div>
+        {/* <div>Root Layout end</div> */}
       </body>
     </html>
   );
