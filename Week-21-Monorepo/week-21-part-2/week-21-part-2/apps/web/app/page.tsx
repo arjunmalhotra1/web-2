@@ -1,3 +1,5 @@
+import {TextInput} from "@repo/ui"
+
 
 export default function Home() {
   return (
@@ -16,9 +18,7 @@ export default function Home() {
         flexDirection:"column",
     }}>
   
-    <TextInput></TextInput>
-  
-      <input type="text" />
+    <TextInput ></TextInput>
       <button>Join Room</button>
       </div>
     </div>
