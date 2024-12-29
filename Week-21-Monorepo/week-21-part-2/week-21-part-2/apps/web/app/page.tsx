@@ -1,4 +1,4 @@
-import {TextInput} from "@repo/ui"
+import {TextInput} from "@repo/ui/text-input"
 
 
 export default function Home() {
